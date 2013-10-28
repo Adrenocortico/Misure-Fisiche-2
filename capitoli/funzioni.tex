@@ -1,0 +1,31 @@
+\chapter{Funzioni} %Funzioni
+\section{Passaggio dallo spettro discreto a quello continuo} %Passaggio spettro
+\label{sec:pass-spettro}
+\begin{equation}
+\sum _{ k }{ p({ x }_{ k }) } \rightarrow \int { p(x)\textrm{d}x } ,\qquad p({ x }_{ k })\rightarrow p({ x }_{ k })\textrm{d}x
+\end{equation}
+
+\section{Funzione comulativa o di ripartizione} %Funzione comulativa o di ripartizione
+\label{sec:comulativa}
+Se $X$ è una variabile aleatoria \ref{sec:variabile-aleatoria}, continua o discreta, la funzione comulativa è:
+\begin{equation}
+F(x)=P\{ X\le x\} 
+\end{equation}
+e rappresenta la probabilità che $X$ assuma un valore non superiore ad un valore assegnato $x$. \\ $x$ non deve necessariamente far parte dello spettro di $X$. \\Se gli eventi sono incompatibili e la probabilità, data da \ref{eq:prob-kolmo}, è $P\left\{ X\le x_{ 2 } \right\} =P\left\{ X\le x_{ 1 } \right\} +P\left\{ x_{ 1 }<X\le x_{ 2 } \right\} $ e quindi si ha l'importante relazione:
+\begin{equation}
+\label{eq:rel-funz-comul}
+P\left\{ x_{ 1 }<X\le x_{ 2 } \right\} =F\left( x_{ 2 } \right) -F\left( x_{ 1 } \right) .
+\end{equation} 
+La relazione \ref{eq:rel-funz-comul} può essere riscritta in termini di densità:
+\begin{equation}
+\label{eq:rel-funz-comul-densità}
+P\left\{ X=x_{ 1 } \right\} =P\left\{ x_{ k-1 }<X\le x_{ k } \right\} =F\left( x_{ k } \right) -F\left( x_{ k-1 } \right) =p\left( x_{ k } \right) .
+\end{equation}
+
+\section{Funzione degli errori} %Funzione degli errori
+\label{sec:funz-errori}
+Avendo definito la variabile standard \ref{sec:var-standard}:
+\begin{equation}
+\textrm{Erf}\left( x \right) \equiv 2\frac { 1 }{ \sqrt { 2\pi  }  } \int _{ 0 }^{ 2\pi  }{ \textrm{exp}\left( -\frac { { t }^{ 2 } }{ 2 }  \right) \textrm{d}t } \equiv 2\textrm{E}\left( \sqrt { 2 } x \right) 
+\end{equation}
+

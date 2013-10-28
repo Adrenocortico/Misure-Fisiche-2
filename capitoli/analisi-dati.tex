@@ -1,0 +1,281 @@
+\chapter{Analisi dei dati sperimentali} %Analisi dei dati sperimentali
+\section{Misure indirette e propagazione degli errori} %Misure indirette e propagazione degli errori
+\label{sec:misure-indirette-propagazione-errori}
+Una grandezza si dice misurata in modo indiretto quando è una funzione $z=f(x,y,w,\dots)$ di una o più grandezze misurate direttamente e affette da incertezza. La determinazione dell'incertezza su $z$ a partire da quella delle grandezze misurate si chiama propagazione degli errori.
+\begin{itemize}
+\item Errori statistici e misure indipendenti: la propagazione degli errori segue la \ref{eq:varianza-z-composta} o la generalizzazione a $n$ variabili $\sigma ^{ 2 }_{ z }\simeq TVT^{ \dagger }$ con $V$ la matrice simmetrica delle covarianze e $T$ la matrice delle derivate ($\dagger$ indica la trasposta), sostituendo alle deviazioni standard, gli errori di misura $s_x$ e $s_y$:
+\begin{equation}
+\label{eq:prop-errore-statistico}
+{ s }_{ f }^{ 2 }={ \left( \frac { \textrm{d}f }{ \textrm{d}x }  \right)  }^{ 2 }{ s }_{ x }^{ 2 }+{ \left( \frac { \textrm{d}f }{ \textrm{d}y }  \right)  }^{ 2 }{ s }_{ y }^{ 2 };
+\end{equation}
+con $n$ misure si ha la legge di propagazione degli errori di misura, valida solo in approssimazione lineare:
+\begin{equation}
+{ s }_{ f }^{ 2 }=\sum _{ i=1 }^{ n }{ { \left( \frac { \textrm{d}f }{ \textrm{d}{ x }_{ i } }  \right)  }^{ 2 }{ s }^{ 2 }\left( { x }_{ i } \right)  } .
+\end{equation}
+La stima della deviazione standard risultante definisce un intervallo di confidenza gaussiano solo se tutte le variabili sono gaussiane.
+\begin{itemize}
+\item La propagazione lineare viene utilizzata anche per prodotti o rapporti dando luogo alla propagazione lineare degli errori percentuali. Si sommano le varianze percentuali o relative:
+\begin{equation}
+Z=X_{ 1 }X_{ 2 },\quad Z=\frac { X_{ 1 } }{ X_{ 2 } } ,\quad Z=\frac { X_{ 2 } }{ X_{ 1 } } \Longrightarrow \frac { { s }_{ z }^{ 2 } }{ z^{ 2 } } =\frac { { s }_{ 1 }^{ 2 } }{ { x }_{ 1 }^{ 2 } } +\frac { { s }_{ 2 }^{ 2 } }{ { x }_{ 2 }^{ 2 } } .
+\end{equation}
+\end{itemize}
+\item Incertezze strumentali (errore sistematico) e misure correlate: si attribuisce spesso la densità uniforme \ref{sec:uniforme}. La legge di propagazione degli errori di misura è:
+\begin{equation}
+\label{eq:prop-errore-strumentale}
+{ \Delta  }_{ f }=\left| \frac { \partial f }{ \partial x }  \right| { \Delta  }_{ x }+\left| \frac { \partial f }{ \partial y }  \right| { \Delta  }_{ y },
+\end{equation}
+che per $n$ misure vale:
+\begin{equation}
+{ \Delta  }_{ f }=\sum _{ i=1 }^{ n }{ \left| \frac { \partial f }{ \partial { x }_{ i } }  \right| { \Delta  }_{ i } } .
+\end{equation}
+Queste formule rappresentano la larghezza totale della deviazione standard quando la composizione delle misure è lineare. Viene usato per una stima del limite superiore dell'errore.
+\begin{itemize}
+\item Misure non correlate: bisogna applicare la propagazione dell'errore statistico \ref{eq:prop-errore-statistico} al caso della densità uniforme \ref{eq:prop-errore-strumentale} la cui varianza vale $\frac{\Delta^2}{12}$. Per due variabili vale:
+\begin{equation}
+\label{eq:prop-mis-non-correlate}
+{ s }_{ f }^{ 2 }=\frac { 1 }{ 12 } \left[ { \left( \frac { \partial f }{ \partial x }  \right)  }^{ 2 }{ \Delta  }_{ x }^{ 2 }+{ \left( \frac { \partial f }{ \partial y }  \right)  }^{ 2 }{ \Delta  }_{ y }^{ 2 } \right] 
+\end{equation}
+e per $n$ variabili:
+\begin{equation}
+{ s }_{ f }^{ 2 }=\frac { 1 }{ 12 } \sum _{ i=1 }^{ n }{ { \left( \frac { \partial f }{ \partial { x }_{ i } }  \right)  }^{ 2 }{ \Delta  }_{ i }^{ 2 } } .
+\end{equation}
+Queste varianze non vanno mai associate alla densità gaussiana.
+\item Somma di due errori sistematici uguali: seguono la densità triangolare in $[0,\Delta]$:
+\begin{equation}
+p(x)= \begin{cases}
+\frac { 4 }{ \Delta^2 }x & \textrm{per } 0\le x\le \frac{\Delta}{2}\\ \frac { 4 }{ \Delta^2 }\left( {\Delta - x} \right) & \textrm{per } \frac{\Delta}{2}<x <\Delta \\ 0 & \textrm{altrimenti}
+\end{cases}
+\end{equation}
+di parametri $\mu=\frac{\Delta}{2}$, $\sigma^2=\frac{\Delta^2}{24}$ e $\sigma=\frac{\Delta}{2\sqrt{6}}$. \\ Si considerano intervalli di confidenza gaussiani già a partire da errori ottenuti dalla combinazione lineare di due soli errori sistematici. \\ Se si utilizza la densità triangolare, nella \ref{eq:prop-mis-non-correlate} al posto di $\frac{1}{12}$, bisogna porre $\frac{1}{24}$.
+\item La propagazione lineare viene utilizzata anche per prodotti o rapporti dando luogo alla propagazione lineare degli errori massimi:
+\begin{equation}
+Z=X_{ 1 }X_{ 2 },\quad Z=\frac { X_{ 1 } }{ X_{ 2 } } ,\quad Z=\frac { X_{ 2 } }{ X_{ 1 } } \Longrightarrow \frac { { \Delta  }_{ z } }{ z } =\frac { { \Delta  }_{ 1 } }{ { x }_{ 1 } } +\frac { { \Delta  }_{ 2 } }{ { x }_{ 2 } } .
+\end{equation}
+\end{itemize}
+\item Errori statistici e sistematici:
+\begin{itemize}
+\item Sovrapposizione lineare di due misure (errore gaussiano + errore sistematico uniforme) [$X\sim N(\mu,\sigma^2)$, $Y\sim U(a,b)$]:
+\begin{equation}
+{ p }_{ z }\left( z \right) =\frac { 1 }{ b-a } \left[ \Phi \left( \frac { b-\left( z-\mu  \right)  }{ \sigma  }  \right) -\Phi \left( \frac { a-\left( z-\mu  \right)  }{ \sigma  }  \right)  \right] .
+\end{equation}
+utilizzando la funzione comulativa della gaussiana standard \ref{eq:comulativa-gauss}, $\Phi$. \\ Se si immagina l'errore sistematico come un intervallo ($a=-\frac{\Delta}{2}$, $b=\frac{\Delta}{2}$) e si introduce la variabile standard $t=\frac{z-\mu}{\sigma}$ ($\sigma$ è l'errore statistico vero). Riscrivendo e ricordando che $E(x)=-E(-x)$ e che $\Phi(x)=0.5+E(x)$ si ha:
+\begin{equation}
+p\left( t \right) =\frac { \Delta  }{ \sigma  } \left[ E\left( t+\frac { \Delta  }{ 2\sigma  }  \right) -E\left( t-\frac { \Delta  }{ 2\sigma  }  \right)  \right] .
+\end{equation}
+Essa ha una deviazion standard:
+\begin{equation}
+{ \sigma  }_{ m }=\sqrt { { { \sigma  } }^{ 2 }+\frac { { \Delta  }^{ 2 } }{ 12 }  } .
+\end{equation}
+\end{itemize}
+\end{itemize}
+
+\subsection{Metodo bootstrap} %Metodo bootstrap
+\label{subsec:metodo-bootstrap}
+Si assumono come valori centrali e deviazioni standard i valori misurati ed i loro errori. \\ Si estraggono a cao delle variabili aleatorie, che vengono combinate come prescritto dalla misura per ottenere l'istogramma simulato delle grandezze finali (o istogrammi, nel caso di misure complesse) \\ La forma dell'istogramma fornisce un'idea della densità di probabilità della grandezza misurata. \\ Gli errori di misura vengono ricavati direttamente come limite delle aree corrispondenti, sull'istogramma, ai livelli di confidenza assegnati. \\ I valori centrali in genere coincidono o sono molto vicini, entro l'errore statistico, ai valori misurati e quindi non forniscono nuove informazioni. \\ Per i valori centrali (le medie) risultanti dalla simulazione, va notato che se gli istogrammi provengono da densità asimmetriche, il valor medio simulato differisce dal valore misurato. Bisogna ugualmente riferirisi al valore misurato e calcolare l'errore di misura centrandosi sempre su di esso.
+
+\section{Riassunto} %Riassunto
+\label{sec:riassunto-propagazione errori}
+\begin{itemize}
+\item Errori statistici: stimare le deviazioni standard dei campioni sperimentali ed applicare la \ref{eq:prop-errore-statistico}. Se tutti gli errori di partenza sono gaussiani, il risultato fornisce la deviazione standard della densità gaussiana risultante e vale la legge $3\sigma$.
+\item Errori sistematici: la deviazione standard risultante quasi sempre definisce livelli di confidenza approssimativamente gaussiani. Si applica la \ref{eq:prop-mis-non-correlate}. \\ La \ref{eq:prop-errore-strumentale} definisce un errore massimo che non va combinato con altre grandezze che rappresentano stime di deviazioni standard.
+\item Combinazione lineare di errori statistici e sistematici: si fa sempre in quadratura attraverso la \ref{eq:prop-errore-statistico}, dove la varianza degli effetti strumentali va calcolata con la \ref{eq:prop-mis-non-correlate}. Non segue la legge $3\sigma$. Spesso però in pratica si assumono livelli gaussiani.
+\item Errori grandi correlati o da combinarsi non linearmente: si ricorre al metodo bootstrap \ref{subsec:metodo-bootstrap}.
+\end{itemize}
+
+\section{Definizione dei tipi di misura} %Definizione dei tipi di misura
+\label{sec:tipi-di-misura}
+La notazione per il tipo di misura è: $M\left(\textrm{grandezza},\textrm{errori statistici},\textrm{errori sistematici} \right) $.
+\begin{itemize}
+\item $M\left( 0,\sigma,0 \right) $: misura di una grandezza costante con errori statistici.
+\item $M\left( 0,0,\Delta \right) $: misura di una grandezza costante con errori sistematici.
+\item $M\left( f,\sigma,\Delta \right) $: misura di una grandezza variabile con errori statistici e sistematici.
+\end{itemize}
+
+\subsection{$M\left( 0,0,\Delta \right) $} %00D
+\label{subsec:00D}
+Grandezza costante, errori sistematici. La misura non presenta fluttuazioni, misure ripetute forniscono tutte le stesso valore.
+\\ Il risultato della misura va presentato nella forma $x\pm \frac{\Delta(x)}{2}$ con un $CL=100\%$: errore massimo.
+\\ Agli errori sistematici si attribuisce una densità uniforme.\\ Varianza:
+\begin{equation}
+s^2(x)=\frac{\Delta^2(x)}{12},
+\end{equation}
+deviazione standard:
+\begin{equation}
+s(x)=\frac{\Delta (x)}{2\sqrt{3}}.
+\end{equation}
+
+\subsection{$M\left( 0,\sigma,0 \right) $} %0s0
+\label{subsec:0s0}
+Grandezza costante, errori statistici. Misure ripetute danno valori diversi (generalmente si distribuiscono come una gaussiana).
+\\ Il risultato della misura va presentato nella forma $x=m\pm \frac{s}{\sqrt{N}}$ con un $CL=68\%$ se $N>10$: viene presentato così quando $\frac{s}{\sqrt{N}} \gg \Delta$. $\frac{s}{\sqrt{N}}$ rappresenta la precisione della misura globale.
+\\ Se due misure hanno errori diverso si può avere la stessa precisione finale se $\frac{N_1}{N_2}=\frac{s_1^2}{s_2^2}$.
+\begin{itemize}
+\item Se le $x_i$ misure provengono da esperimenti diversi, esse avranno precisioni $s_i$ differenti e perciò bisogna usare la media pesata
+\begin{equation}
+\mu \in \frac { \sum _{ i=1 }^{ k }{ { x }_{ i }{ p }_{ i } }  }{ \sum _{ i=1 }^{ k }{ { p }_{ i } }  } \pm \sqrt { \frac { 1 }{ \sum _{ i=1 }^{ k }{ { p }_{ i } }  }  }
+\end{equation}
+con ${ p }_{ i }=\frac { { n }_{ i } }{ { \sigma  }_{ i }^{ 2 } } $ e $n_i=1$. Si considera quindi una funzione di verosimiglianza prodotto di $N$ misure gaussiane.
+\\ Con l'approssimazione $s_i\sim \sigma_i$ si ha la probabilità di ottenere il risultato osservato secondo la verosimiglianza $L\left( \theta ,x \right) =\prod _{ i=1 }^{ n }{ \left[ \frac { 1 }{ { \sigma  }_{ i }\left( \theta  \right) \sqrt { 2\pi  }  } \textrm{exp}\left( -\frac { { \left( { x }_{ i }-{ \mu  }_{ i }\left( \theta  \right)  \right)  }^{ 2 } }{ 2{ \sigma  }_{ i }^{ 2 }\left( \theta  \right)  }  \right)  \right]  } $:
+\begin{equation}
+L\left( \mu ,x \right) =\prod _{ i=1 }^{ n }{ \left[ \frac { 1 }{ { s }_{ i }\sqrt { 2\pi  }  } \textrm{exp}\left( -\frac { { \left( { x }_{ i }-{ \mu  } \right)  }^{ 2 } }{ 2{ s }_{ i }^{ 2 } }  \right)  \right]  } .
+\end{equation}
+\end{itemize}
+
+\subsection{$M\left( 0,\sigma,\Delta \right) $} %0sD
+\label{subsec:0sD}
+Grandezza costante, errori statistici, errori sistematici. Misure ripetute forniscono valori diversi, campione dei dati presentato in forma di istogramma. Non ha senso scegliere il passo dell'istogramma inferiore all'errore sistematico $\Delta$. In questa classe rientrano le misure \ref{subsec:0s0} quando i dati sono riportato in un istogramma di passo $\Delta$.
+\\ Dopo aver calcolato $m$ ed $s$ di un campione di $N$ misure, si calcola la varianza del campione osservato, dovuta agli errori statistici e agli errori sistematici:
+\begin{equation}
+s^2=s^2\left( \textrm{stat}\right)+\frac{\Delta^2\left( \textrm{syst}\right)}{12}.
+\end{equation}
+Da questo si ricava la correzione di Sheppard:
+\begin{equation}
+\label{eq:corr-sheppard}
+s^2\left( \textrm{stat}\right)=s^2-\frac{\Delta^2\left( \textrm{syst}\right)}{12}.
+\end{equation}
+Dà buoni risultati nel caso di misure \ref{subsec:0s0} istogrammate con passo $\Delta$.
+\\ Il risultato della misura va presentato nella forma $x=m\pm \frac{s}{\sqrt{N}}\left( \textrm{stat}\right)\pm \frac{\Delta}{2}\left( \textrm{syst}\right) $.
+\\ Per l'intervallo di confidenza si utilizza:
+\begin{itemize}
+\item Errore massimo globale:
+\begin{equation}
+x=m\pm \left( 3\frac { s }{ \sqrt { N }  } +\frac { \Delta  }{ 2 }  \right) 
+\end{equation}
+\item Densità uniforme: 
+\begin{equation}
+x=m\pm \sqrt { \frac { { s }^{ 2 } }{ N } +\frac { { \Delta  }^{ 2 } }{ 12 }  } .
+\end{equation}
+\end{itemize}
+
+\subsection{$M\left( f,0,0 \right) $} %f00
+\label{subsec:f00}
+Grandezza variabile. Scopo della misura è quello di determinare la distribuzione che determina il fenomeno. A questa classe appartengono tutti i fenomeni stocastici, gli esperimenti di conteggio e i metodi per determinare medie, varianze e forme funzionali.
+\\ Nel conteggio di $N_{s+b}$ ($s$: sorgente, $b$: fondo) eventi da una sorgente entro un tempo $t_s$ si deve prima trovare l'errore poissoniano dei conteggi originali e poi si deve moltiplicare per la costante $\frac{t_s}{t_b}$. Il rapporto segnale/fondo è:
+\begin{equation}
+n_{ \sigma  }=\frac { { N }_{ s+b }-{ N }_{ b }\frac { { t }_{ s } }{ { t }_{ b } }  }{ \sqrt { { N }_{ s+b }+{ N }_{ b }\frac { { t }_{ s }^{ 2 } }{ { t }_{ b }^{ 2 } }  }  } .
+\end{equation}
+Con $n_\sigma \simeq 3$ si parla di forte evidenza; con $n_\sigma > 5$ si ritiene avvenuta la scoperta.
+
+\subsection{$M\left( f,\sigma,0 \right) $} %fs0
+\label{subsec:fs0}
+Grandezza variabile, errori statistici, errori sistematici. Le fluttuazioni dei valori assunti dall'oggetto fisico si combinano con le fluttuazioni dovute alla misura. 
+\\ Bisogna prima di tutto misurare la risposta dell'apparato, cioè la funzione dell'apparato \ref{sec:funzione-apparato}.
+\begin{itemize}
+\item Se $p_Z(z)\equiv f(x)$ e $p_X(x)\equiv f(x)$, $Z$ e $X$ sono indipendenti e quindi vale:
+\begin{equation}
+g\left( y \right) =\int { { p }_{ Z }\left( { h }^{ -1 }\left( y,x \right)  \right) f\left( x \right) \frac { \partial { h }^{ -1 } }{ \partial y } \textrm{ d}x } 
+\end{equation}
+e quindi la funzione dell'apparato è:
+\begin{equation}
+{ p }_{ Z }\left( { h }^{ -1 }\left( y,x \right)  \right) f\left( x \right) \frac { \partial { h }^{ -1 } }{ \partial y } \equiv \delta \left( y,x \right) .
+\end{equation}
+\end{itemize}
+
+In base alle leggi della probabilità composte e totali, le tre funzioni $f(x)$ (fisica), $g(y)$ (osservazione) e $\delta(y,x)$ (apparato) sono legate dalla relazione chiamata integrale di folding:
+\begin{equation}
+\label{eq:integrale-folding}
+g\left( y \right) =\int { f\left( x \right) \delta \left( x \right) \textrm{ d}x } \equiv f+\delta .
+\end{equation}
+La probabilità di osservare un valore $y$ è data dalla probabilità che la variabile fisica assuma un valore $x$, per la probabilità che lo strumento, in presenza di un valore $x$, fornisca un valore $y$. Queste probabilità vanno integrate su tutti i valori veri $x$ dello spettro che possono avere $y$ come valore osservato.
+\begin{itemize}
+\item Se la risposta dell'apparato è lineare $y=z+x$, $z=y-x$, $\frac { \partial { h }^{ -1 } }{ \partial y } =1\\ $:
+\begin{equation}
+g\left( y \right) =\int { f\left( x \right) \delta \left( y-x \right) \textrm{ d}x } 
+\end{equation}
+\end{itemize}
+
+Si ha:
+\begin{equation}
+{ s }^{ 2 }\left( x \right) ={ s }^{ 2 }\left( y \right) -s^{ 2 }\left( d \right) ;
+\end{equation}
+\begin{equation}
+m\left( x \right) =m\left( y \right) -m\left( d \right) ;
+\end{equation}
+\begin{equation}
+\mu =m(x)\pm \frac { s\left( x \right)  }{ \sqrt { N }  } ;
+\end{equation}
+\begin{equation}
+\sigma \simeq s\left( x \right) \pm \frac { s\left( x \right)  }{ \sqrt { 2N }  } .
+\end{equation}
+
+\subsection{$M\left( f,0,\Delta \right) $} %f0D
+\label{subsec:f0D}
+Grandezza variabile, errori statistici, errori sistematici. Le fluttuazioni dei valori assunti dall'oggetto fisico si combinano con le incertezze dovute alla misura. 
+\\ Bisogna prima di tutto misurare la risposta dell'apparato, cioè la funzione dell'apparato \ref{sec:funzione-apparato}.
+\begin{itemize}
+\item Se $p_Z(z)\equiv f(x)$ e $p_X(x)\equiv f(x)$, $Z$ e $X$ sono indipendenti e quindi vale:
+\[
+g\left( y \right) =\int { { p }_{ Z }\left( { h }^{ -1 }\left( y,x \right)  \right) f\left( x \right) \frac { \partial { h }^{ -1 } }{ \partial y } \textrm{ d}x } 
+\]
+e quindi la funzione dell'apparato è:
+\[
+{ p }_{ Z }\left( { h }^{ -1 }\left( y,x \right)  \right) f\left( x \right) \frac { \partial { h }^{ -1 } }{ \partial y } \equiv \delta \left( y,x \right) .
+\]
+\end{itemize}
+
+In base alle leggi della probabilità composte e totali, le tre funzioni $f(x)$ (fisica), $g(y)$ (osservazione) e $\delta(y,x)$ (apparato) sono legate dalla relazione chiamata integrale di folding:
+\[
+g\left( y \right) =\int { f\left( x \right) \delta \left( x \right) \textrm{ d}x } \equiv f+\delta .
+\]
+La probabilità di osservare un valore $y$ è data dalla probabilità che la variabile fisica assuma un valore $x$, per la probabilità che lo strumento, in presenza di un valore $x$, fornisca un valore $y$. Queste probabilità vanno integrate su tutti i valori veri $x$ dello spettro che possono avere $y$ come valore osservato.
+\begin{itemize}
+\item Se la risposta dell'apparato è lineare $y=z+x$, $z=y-x$, $\frac { \partial { h }^{ -1 } }{ \partial y } =1\\ $:
+\[
+g\left( y \right) =\int { f\left( x \right) \delta \left( y-x \right) \textrm{ d}x } 
+\]
+\end{itemize}
+
+Si ha:
+\begin{equation}
+{ s }^{ 2 }\left( x \right) ={ s }^{ 2 }\left( y \right) -\frac { { \Delta  }^{ 2 } }{ 12 } ;
+\end{equation}
+\begin{equation}
+m\left( x \right) =m\left( y \right) -m\left( d \right) ;
+\end{equation}
+\begin{equation}
+\mu =m\left( x \right) \pm \frac { s\left( x \right)  }{ \sqrt { N }  } \pm \frac { \Delta  }{ 2 } ;
+\end{equation}
+\begin{equation}
+\sigma \simeq s\left( x \right) \pm \frac { s\left( x \right)  }{ \sqrt { 2N }  } .
+\end{equation}
+
+\subsection{$M\left( f,\sigma,\Delta \right) $} %fsD
+\label{subsec:fsD}
+Grandezza variabile, errori statistici, errori sistematici. Le fluttuazioni dei valori assunti dall'oggetto fisico si combinano con le fluttuazioni e le incertezze dovute alla misura. 
+\\ Bisogna prima di tutto misurare la risposta dell'apparato, cioè la funzione dell'apparato \ref{sec:funzione-apparato}.
+\begin{itemize}
+\item Se $p_Z(z)\equiv f(x)$ e $p_X(x)\equiv f(x)$, $Z$ e $X$ sono indipendenti e quindi vale:
+\[
+g\left( y \right) =\int { { p }_{ Z }\left( { h }^{ -1 }\left( y,x \right)  \right) f\left( x \right) \frac { \partial { h }^{ -1 } }{ \partial y } \textrm{ d}x } 
+\]
+e quindi la funzione dell'apparato è:
+\[
+{ p }_{ Z }\left( { h }^{ -1 }\left( y,x \right)  \right) f\left( x \right) \frac { \partial { h }^{ -1 } }{ \partial y } \equiv \delta \left( y,x \right) .
+\]
+\end{itemize}
+
+In base alle leggi della probabilità composte e totali, le tre funzioni $f(x)$ (fisica), $g(y)$ (osservazione) e $\delta(y,x)$ (apparato) sono legate dalla relazione chiamata integrale di folding:
+\[
+g\left( y \right) =\int { f\left( x \right) \delta \left( x \right) \textrm{ d}x } \equiv f+\delta .
+\]
+La probabilità di osservare un valore $y$ è data dalla probabilità che la variabile fisica assuma un valore $x$, per la probabilità che lo strumento, in presenza di un valore $x$, fornisca un valore $y$. Queste probabilità vanno integrate su tutti i valori veri $x$ dello spettro che possono avere $y$ come valore osservato.
+\begin{itemize}
+\item Se la risposta dell'apparato è lineare $y=z+x$, $z=y-x$, $\frac { \partial { h }^{ -1 } }{ \partial y } =1\\ $:
+\[
+g\left( y \right) =\int { f\left( x \right) \delta \left( y-x \right) \textrm{ d}x } 
+\]
+\end{itemize}
+
+Si ha:
+\begin{equation}
+{ s }^{ 2 }\left( x \right) ={ s }^{ 2 }\left( y \right) -{ s }^{ 2 }\left( d \right) -\frac { { \Delta  }^{ 2 } }{ 12 } ;
+\end{equation}
+\begin{equation}
+m\left( x \right) =m\left( y \right) -m\left( d \right) ;
+\end{equation}
+\begin{equation}
+\mu =m\left( x \right) \pm \frac { s\left( x \right)  }{ \sqrt { N }  } \pm \frac { \Delta  }{ 2 } ;
+\end{equation}
+\begin{equation}
+\sigma \simeq s\left( x \right) \pm \frac { s\left( x \right)  }{ \sqrt { 2N }  } .
+\end{equation}

@@ -1,0 +1,486 @@
+\chapter{Stastistica di base} %Stastistica di base
+Lo spazio di probabilità \ref{sec:spazio-probabilità} cambia leggermente la notazione e diventa $\varepsilon (\theta) \equiv (S,\mathcal{F},P_\theta)$ dove $P_\theta$ è una probabilità dipendente da un parametro $\theta$, che fornisce una legge
+\begin{equation}
+\label{eq:densità-probab-stat}
+P\left\{ X\in A \right\} =\int _{ A }{ p\left( x;\theta  \right) \textrm{ d}x }
+\end{equation}
+per il campione casuale $\left( { X }_{ 1 },\dots ,{ X }_{ N } \right)$.
+\section{Determinazione degli intervalli di confidenza} %Determinazione degli intervalli di confidenza
+\label{sec:deter-intervalli-confidenza}
+Avendo ottenuto un valore $x$ di una variabile $X$ continua e conoscendo la densità $p\left( x;\theta  \right)$ della probabilià $P\left\{ X\in A \right\} =\int _{ A }{ p\left( x;\theta  \right) \textrm{ d}x }$, se $\theta$ è un parametro di posizione come la media, i valori $[\theta_1,\theta_2]$, relativi ad una realizzazione dell'intervallo aleatorio $[\Theta_1,\Theta_2]$ secondo il $CL$ assegnato, possono essere trovati con le relazioni:
+\begin{equation}
+\int _{ x }^{ +\infty  }{ p\left( z;{ \theta  }_{ 1 } \right) \textrm{ d}z}={ c }_{ 1 },\qquad \int _{ -\infty  }^{ x }{ p\left( z;{ \theta  }_{ 2 } \right) \textrm{ d}z } ={ c }_{ 2 }
+\end{equation}
+dove $CL=1-c_1-c_2$. Nel caso $X$ sia una variabile discreta, agli integrali vanno sostituite le somme sui componenti.
+
+Considerando il caso in cui il parametro $\theta$ sia la media di una curva normale: $\theta \equiv \mu$. La forma di $p(x;\mu)$ è invariante per traslazioni e le funzioni $\theta_1(x)$ e $\theta_2(x)$ sono due rette parallele. Risulta quindi:
+\[
+\int _{ \mu -t\sigma  }^{ \mu +t\sigma  }{ p\left( x;\mu  \right) dx } =\int _{ \mu -t\sigma  }^{ \mu +t\sigma  }{ p\left( \mu ;x \right) d\mu  } 
+\]
+che si può scrivere:
+\begin{equation}
+\label{eq:caso-gaussiano}
+P\left\{ \mu -t\sigma \le X\le \mu +t\sigma  \right\} =P\left\{ -t\sigma \le X-\mu \le t\sigma  \right\} =P\left\{ X-t\sigma \le \mu \le X+t\sigma  \right\} .
+\end{equation}
+
+I livelli di probabilità dell'intervallo centrato su $\mu$ coincidono con i livelli di confidenza dell'intervallo aleatorio centrato su $X$.
+
+\section{Approccio bayesiano} %Approccio bayesiano
+\label{sec:bayesiano}
+Nell'approccio bayesiano il parametro da stimare viene considerato come una variabile aleatoria e l'intervallo di confidenza \ref{sec:intervallo-confidenza} rappresenta la conoscenza ottenuta, dopo la misura, sul valore del parametro.
+
+\section{Stima della probabilità da grandi campioni} %Probabilità da grandi campioni
+\label{sec:stima-prob-grandi}
+Prova di $n$ tentativi bernoulliani, ottenendo $x$ successi con quindi una frequenza $f=\frac{x}{n}$. Si definisce una variabile standard \ref{sec:var-standard} $T=\frac { F-p }{ \sigma \left[ F \right]  } $ che assume i valori 
+\begin{equation}
+t=\frac { f-p }{ \sqrt { \frac { p\left( 1-p \right)  }{ n }  }  } .
+\end{equation}
+
+Se si esegue una prova, $f$ è noto e $p$ è incognito; utilizzando l'approccio statistico, si può allora determinare i valori di $p$ per i quali il valore assunto dalla variabile standard risulta minore di un certo limite $t$ assegnato:
+\begin{equation}
+\frac { \left| f-p \right|  }{ \sqrt { \frac { p\left( 1-p \right)  }{ n }  }  } \le \left| t \right| .
+\end{equation}
+
+Elimando i valori assoluti elevando al quadrato ambo i membri e risolvendo rispetto all'incognita $p$, si ottiene, in forma compatta la formula di Wilson per piccoli campionamenti:
+\begin{equation}
+\label{eq:wilson-piccoli}
+p\in \frac { f+\frac { t^{ 2 } }{ 2n }  }{ \frac { t^{ 2 } }{ n } +1 } \pm \frac { t\sqrt { \frac { t^{ 2 } }{ 4n^{ 2 } } +\frac { f\left( 1-f \right)  }{ n }  }  }{ \frac { t^{ 2 } }{ n } +1 } .
+\end{equation}
+Il parametro $t$ sta ad indicare un qualunque valore della variabile standard $T$; porre $t=1$ corrisponde a considerare un'unità di errore statistico. \\ L'intervallo è centrato nel punto $\frac { f+\frac { t^{ 2 } }{ 2n }  }{ \frac { t^{ 2 } }{ n } +1 } $, funzione di $f$ e del numero di tentativi effettuati. Ciò è dovuto all'assimetria della binomiale per un numero di prove abbastanza esiguo.
+
+Per un numero di prove $n\gg 1$ vale l'approssimazione gaussiana e la \ref{eq:wilson-piccoli} diventa:
+\begin{equation}
+\label{eq:wilson-grandi}
+p\in f\pm { t }_{ 1-\frac { \alpha  }{ 2 }  }s=f\pm { t }_{ 1-\frac { \alpha  }{ 2 }  }\sqrt { \frac { f\left( 1-f \right)  }{ n }  } ,
+\end{equation}
+dove $\left| { t }_{ \frac { \alpha  }{ 2 }  } \right| ={ t }_{ 1-\frac { \alpha  }{ 2 }  }$ sono i valori quantili della gaussiana standard che definiscono gli estremi dell'intervallo che sottende un'area pari a $CL=1-\alpha$. La dimensione del campione necessaria per mantenere l'errore statistico al di sotto di un valore assoluto prefissato a priori è:
+\begin{equation}
+{ \sigma  }_{ max }^{ 2 }=\frac { 1 }{ 4n } 
+\end{equation}
+Ricavato dalla varianza:
+\begin{equation}
+{ \sigma  }^{ 2 }=\frac { p\left( 1-p \right)  }{ n } 
+\end{equation}
+Il numero di tentativi necessari per mantenere l'intervallo di stima $\pm { t }_{ 1-\frac { \alpha  }{ 2 }  }{ \sigma  }_{ max }$ al disotto di un certo valore prefissato è quindi:
+\begin{equation}
+n=\frac { { t }^{ 2 }_{ 1-\frac { \alpha  }{ 2 }  } }{ 4{ \left( { t }^{ 2 }_{ 1-\frac { \alpha  }{ 2 }  }{ \sigma  }_{ max } \right)  }^{ 2 } } .
+\end{equation}
+Con l'intervallo $1\sigma$ e quindi ${ t }_{ 1-\frac { \alpha  }{ 2 }  }=1$ da \ref{eq:wilson-grandi} si ha l'intervallo di Wald:
+\begin{equation}
+\label{eq:intervallo-wald}
+p\in f\pm s=f\pm \sqrt { \frac { f\left( 1-f \right)  }{ n }  } .
+\end{equation}
+
+Moltiplicando per il numero di tentativi la \ref{eq:intervallo-wald} può essere espressa in funzione del numero di successi $x$:
+\begin{equation}
+\mu \in f\pm \sqrt { x\left( 1-\frac { x }{ n }  \right)  } .
+\end{equation}
+L'intervallo è centrato sul valore misurato, la variabile $T$ è pivotale perché $T\sim N(0,1)$; l'errore statistico ha la stessa espressione della deviazione standard della distribuzione binomiale (con la probabiltà $p$ sostituita dalla frequenza misurata $f$) e i livelli di confidenza $CL$ sono gaussiani.
+
+\subsection{Per grandi campioni:}
+\begin{itemize}
+\item la densità binomiale assume una forma gaussiana;
+\item l'intervallo di confidenza è simmetrico;
+\item il valore misurato $f$ definisce due code che valgono entrambe $\frac{1-CL}{2}$ in modo da avere le due aree tra $f$ e $p_1$ e tra $f$ e $p_2$ uguali ognuna a $\frac{CL}{2}$;
+\item se è valida la condizione $nf, n(1-f)\gg 1$, i livelli di confidenza associati all'intervallo \ref{eq:intervallo-wald} sono quelli della legge $3\sigma$ gaussiana (\ref{sec:tre-sigma}).
+\end{itemize}
+\subsection{Per piccoli campioni:}
+\begin{itemize}
+\item la variabile $T$ non è pivotale e non è più possibile assegnare in modo generale i livelli di confidenza;
+\item l'intervallo di confidenza è asimmetrico;
+\item le due code di area $\frac{1-CL}{2}$ assumono forma diversa
+\end{itemize}
+
+\section{Stima della probabilità da piccoli campioni} %Probabilità da piccoli campioni
+\label{sec:stima-prob-piccoli}
+Per un numero di campioni esiguo, in cui $x=nf<10$ si utilizza l'intervallo \ref{eq:wilson-piccoli} ma non sono possibili da definire i livelli di confidenza universali perché la binomiale dipende fortemente sia da $n$ che dal valore della probabilità di successo $p$.
+Un modo per definire gli estremi dell'intervallo di confidenza corrispondente al $CL$ sono le equazioni di Clopper-Pearson:
+\begin{equation}
+\label{eq:clopper-pearson}
+\sum _{ k=x }^{ n }{ { n\choose k }{ p }_{ 1 }^{ k }{ \left( 1-{ p }_{ 1 } \right)  }^{ n-k } } ={ c }_{ 1 },\qquad \sum _{ k=0 }^{ x }{ { n\choose k }{ p }_{ 2 }^{ k }{ \left( 1-{ p }_{ 2 } \right)  }^{ n-k } } ={ c }_{ 2 }.
+\end{equation}
+Nel caso simmetrico $c_1=c_2=\frac{1-CL}{2}=\frac{\alpha}{2}$.
+
+In alternativa si può applicare la \ref{eq:wilson-piccoli} applicando la correzioni di continuità $f_\pm=\frac{x\pm 0.5}{n}$ alla frequenza $f=\frac{x}{n}$; con l'approssimazione alla gaussiana si ottiene:
+\begin{equation}
+\label{eq:CL-normale}
+p\in \frac { f_{ \pm  }+\frac { t^{ 2 }_{ \frac { \alpha  }{ 2 }  } }{ 2n }  }{ \frac { t^{ 2 }_{ \frac { \alpha  }{ 2 }  } }{ n } +1 } \pm \frac { \left| t_{ \frac { \alpha  }{ 2 }  } \right| \sqrt { \frac { t^{ 2 }_{ \frac { \alpha  }{ 2 }  } }{ 4n^{ 2 } } \frac { f_{ \pm  }\left( 1-f_{ \pm  } \right)  }{ n }  }  }{ \frac { t^{ 2 }_{ \frac { \alpha  }{ 2 }  } }{ n } +1 } .
+\end{equation}
+\begin{itemize}
+\item Nei casi $x=0$ e $x=n$ le equazioni di Clopper-Pearson \ref{eq:clopper-pearson} con $c_1=c_2=1-CL$ presentano due casi limite:
+\[
+x=n\quad \Rightarrow \qquad { p }_{ 1 }^{ n }=1-CL,
+\]
+\[
+x=0\quad \Rightarrow \qquad { \left( 1-{ p }_{ 2 } \right)  }^{ n }=1-CL.
+\]
+Ciò è utile per definire il limite inferiore di una probabilità quando tutti i tentativi hanno avuto successo:
+\begin{equation}
+{ p }_{ 1 }=\sqrt [ n ]{ 1-CL } ={ e }^{ \frac { 1 }{ n } \ln { \left( 1-CL \right)  }  }={ 10 }^{ \frac { 1 }{ n } \log { \left( 1-CL \right)  }  }
+\end{equation}
+e il limite superiore quando non si è registrato alcun successo:
+\begin{equation}
+{ p }_{ 2 }=1-\sqrt [ n ]{ 1-CL } =1-{ e }^{ \frac { 1 }{ n } \ln { \left( 1-CL \right)  }  }=1-{ 10 }^{ \frac { 1 }{ n } \log { \left( 1-CL \right)  }  }.
+\end{equation}
+\item Quando $n$ è grande e non si sono registrati successi, $p_2$ è piccola e si ottiene approssimando al secondo ordine:
+\[
+{ p }_{ 2 }\simeq -\frac { 1 }{ n } \ln { \left( 1-CL \right)  } 
+\]
+che corrisponde all'equazione:
+\begin{equation}
+{ e }^{ -np_{ 2 } }=\left( 1-CL \right) =\alpha .
+\end{equation}
+\end{itemize}
+
+\section{Intervalli di stima per eventi poissoniani} %Intervalli di stima per eventi poissoniani
+\label{sec:intervalli-stima-poisson}
+Il caso binomiale può essere esteso a quello poissoniano. Per stimare correttamente $\mu$ si usano equazioni analoghe a quelle \ref{eq:clopper-pearson}:
+\begin{equation}
+\label{eq:intervalli-eventi-poisson}
+\sum _{ k=x }^{ n }{ { \frac { { \mu  }_{ 1 }^{ k } }{ k! }  }{ e }^{ -{ \mu  }_{ 1 } } } ={ c }_{ 1 },\qquad \sum _{ k=0 }^{ x }{ { \frac { { \mu  }_{ 2 }^{ k } }{ k! }  }{ e }^{ -{ \mu  }_{ 2 } } } ={ c }_{ 2 }.
+\end{equation}
+Nel caso simmetrico si ha sempre $c_1=c_2=\frac{1-CL}{2}$.
+
+Con l'approssimazione gaussiana ($\sigma^2=\mu$) l'intervallo di confidenza per il valore atteso $\mu$ è:
+\begin{equation}
+\label{eq:intervalli-eventi-poisson-gauss}
+\frac { \left| x-\mu  \right|  }{ \sqrt { \mu  }  } \le \left| { t }_{ \frac { \alpha  }{ 2 }  } \right| .
+\end{equation}
+
+Introducendo la correzione di continuità $x_\pm=x\pm 0.5$ se $x\neq 0$ si ottiene:
+\begin{equation}
+\mu \in x_{ \pm  }+\frac { { t }^{ 2 }_{ \frac { \alpha  }{ 2 }  } }{ 2 } \pm \left| { t }_{ \frac { \alpha  }{ 2 }  } \right| \sqrt { x_{ \pm  }+\frac { { t }^{ 2 }_{ \frac { \alpha  }{ 2 }  } }{ 4 }  } .
+\end{equation}
+\begin{itemize}
+\item Per $x=0$:
+\begin{equation}
+{ e }^{ -\mu  }=1-CL;
+\end{equation}
+\item per $x=1$:
+\begin{equation}
+{ e }^{ -\mu  }+\mu { e }^{ -\mu  }=1-CL;
+\end{equation}
+\item per $x=2$:
+\begin{equation}
+{ e }^{ -\mu  }+\mu { e }^{ -\mu  }+\frac { { \mu  }^{ 2 } }{ 2 } { e }^{ -\mu  }=1-CL,
+\end{equation}
+\item quando $x>100$:
+\begin{equation}
+\mu \in x\pm \left| { t }_{ \frac { \alpha  }{ 2 }  } \right| \sqrt { x }.
+\end{equation}
+\end{itemize}
+
+\section{Stima della media da grandi campioni} %Media da grandi campioni
+\label{sec:stima-media-grandi}
+La media di un campione, o media campionaria, è una variabile aleatoria. Se si produce un campione casuale di dimensione $N$ da una distribuzione, e se ne si fa la media $m=\frac { 1 }{ N } \sum _{ i=1 }^{ N }{ { x }_{ i } } $ e si ripete il procedimento, ogni volta si ottiene un risultato diverso.
+
+La media campionaria è uno stimatore:
+\begin{equation}
+M=\frac { 1 }{ N } \sum _{ i=1 }^{ N }{ { X }_{ i } } .
+\end{equation}
+La varianza alla variabile $M$ è:
+\begin{equation}
+\textrm{Var}\left[ M \right] =\textrm{Var}\left[ \frac { 1 }{ N } \sum _{ i=1 }^{ N }{ { X }_{ i } }  \right] =\frac { 1 }{ N^{ 2 } } \sum _{ i=1 }^{ N }{ \textrm{Var}\left[ { X }_{ i } \right]  } =\frac { 1 }{ N^{ 2 } } \sum _{ i=1 }^{ N }{ \sigma ^{ 2 } } =\frac { \sigma ^{ 2 } }{ N } .
+\end{equation}
+Poiché $\sigma^2$ non è nota solitamente, si può approssimare con la varianza $s^2$ calcolata dal campione e si ottiene:
+\begin{equation}
+\label{eq:media-grandi}
+\mu \in m \pm \frac{\sigma}{\sqrt {N}} \simeq m \pm \frac{s}{\sqrt {N}}.
+\end{equation}
+
+Il teorema del limite centrale \ref{sec:limite-centrale} afferma che la densità della media campionaria sarà gaussiana per $N\gg 1$, cioè per $N>10$. Nel caso gaussiano \ref{eq:caso-gaussiano} i livelli di confidenza cercati sono dati dai livelli di probabilità rispetto alla media della corrispondente densità gaussiana.
+
+Nella \ref{eq:media-grandi} la varianza vera $\sigma$ può essere sostituita da quella osservata $s$ se $N-1\simeq N$, cioè per valorei di $N>20,30$ con livelli di confidenza gaussiani per $N>10$.
+
+\section{Stima della varianza da grandi campioni} %Varianza da grandi campioni
+\label{sec:stima-var-grandi}
+La varianza campionaria per variabili $X$ qualsiasi tende alla densità gaussiana, ma solo per campioni $N>10$. \\ Se le variabili del campione sono gaussiane allora la distribuzione campionaria della varianza è riconducibile alla densità $\chi^2$ la quale converge a quella gaussiana un po' più velocemente all'incirca per $N>30$. \\ La variabile aleatoria varianza campionaria tende a diventare una variabile gaussiana molto più lentamente della corrispondente media campionaria che lo è già per $N>10$.
+
+Si possono avere due tipi di varianza:
+\begin{itemize}
+\item varianza rispetto la media vera:
+\begin{equation}
+\label{eq:var-grandi-vera}
+{ S }_{ \mu  }^{ 2 }=\frac { 1 }{ N } \sum _{ i=1 }^{ N }{ \left( { X }_{ i }-\mu  \right) ^{ 2 } } ;
+\end{equation}
+La \ref{eq:var-grandi-vera} è uno stimatore distorto \ref{sec:stimatore-distorto} infatti $\left< \frac { 1 }{ N } \sum _{ i=1 }^{ N }{ \left( { X }_{ i }-\mu  \right) ^{ 2 } }  \right> =\frac { N-1 }{ N } \sigma ^{ 2 }$, con $\frac{1}{N}$ come fattore di distorsione;
+\item varianza rispetto la media campionaria:
+\begin{equation}
+\label{eq:var-grandi-campionaria}
+{ S }^{ 2 }=\frac { 1 }{ N-1 } \sum _{ i=1 }^{ N }{ \left( { X }_{ i }-M \right) ^{ 2 } }.
+\end{equation}
+La \ref{eq:var-grandi-campionaria} è uno stimatore non distorto in quanto gode della proprietà $\left< S^{ 2 } \right> =\sigma ^{ 2 }$.
+\end{itemize}
+Esse tendono alla varianza vera $\sigma^2$ per $N\rightarrow \infty$.
+
+\subsection{Varianza della varianza}
+\label{subsec:varianza-varianza}
+La varianza della varianza fatta sul valore vero è:
+\begin{equation}
+\textrm{Var}\left[ { S }_{ \mu  }^{ 2 } \right] =\frac { 1 }{ N^{ 2 } } \sum _{ i }{ \textrm{Var}\left[ { \left( { X }_{ i }-\mu  \right)  }^{ 2 } \right]  } =\frac { 1 }{ N^{ 2 } } \left[ N{ \Delta  }_{ 4 }-N{ \sigma  }^{ 4 } \right] =\frac { 1 }{ N } \left( { \Delta  }_{ 4 }-{ \sigma  }^{ 4 } \right) 
+\end{equation}
+e sostituendo ai valori veri $\Delta_4$ e $\sigma^4$ i valori stimati ${ D }_{ 4 }=\frac { 1 }{ N } \sum _{ i }{ { \left( { X }_{ i }-\mu  \right)  }^{ 2 } } $ e $s^4_\mu$ si ottiene:
+\begin{equation}
+\textrm{ Var }\left[ { S }_{ \mu  }^{ 2 } \right] \simeq \frac { D_{ 4 }-s^{ 4 }_{ \mu  } }{ N } .
+\end{equation}
+\begin{itemize}
+\item L'intervallo di confidenza della varianza con media nota è:
+\begin{equation}
+\sigma ^{ 2 }\in s^{ 2 }_{ \mu  }\pm \sigma \left[ { S }_{ \mu  }^{ 2 } \right] =s^{ 2 }_{ \mu  }\pm \sqrt { \frac { D_{ 4 }-s^{ 4 }_{ \mu  } }{ N }  }.
+\end{equation}
+\item L'intervallo di confidenza della varianza con media ignota è:
+\begin{equation}
+\sigma ^{ 2 }\in s^{ 2 }\pm \sigma \left[ { S }^{ 2 } \right] =s^{ 2 }\pm \sqrt { \frac { D_{ 4 }-s^{ 4 }_{ \mu  } }{ N-1 }  } .
+\end{equation}
+\end{itemize}
+
+L'intervallo di confidenza della deviazione standard è:
+\begin{equation}
+\sigma \in s\pm \sqrt { \frac { D_{ 4 }-s^{ 4 } }{ 4\left( N-1 \right) { s }^{ 2 } }  } .
+\end{equation}
+
+Se le variabili che compongono il campione sono gaussiane, valendo la relazione $\Delta_4=3\sigma^4$ e le formule di prima diventano:
+\begin{equation}
+\sigma ^{ 2 }\in s^{ 2 }\pm \sigma ^{ 2 }\sqrt { \frac { 2 }{ N-1 }  } ,
+\end{equation}
+\begin{equation}
+\sigma \in s\pm \frac { \sigma  }{ \sqrt { 2\left( N-1 \right)  }  }.
+\end{equation}
+Per $CL=1-\alpha$:
+\begin{equation}
+\label{eq:stima-var-var-gauss-grandi}
+\frac { s^{ 2 } }{ 1+t_{ 1-\frac { \alpha  }{ 2 }  }\sqrt { \frac { 2 }{ N-1 }  }  } \le \sigma ^{ 2 }\le \frac { s^{ 2 } }{ 1-t_{ 1-\frac { \alpha  }{ 2 }  }\sqrt { \frac { 2 }{ N-1  }  }  },
+\end{equation}
+\begin{equation}
+\label{eq:stima-var-dev-gauss-grandi}
+\frac { s }{ 1+t_{ 1-\frac { \alpha  }{ 2 }  }\sqrt { \frac { 1 }{ 2\left( N-1 \right)  }  }  } \le \sigma \le \frac { s }{ 1-t_{ 1-\frac { \alpha  }{ 2 }  }\sqrt { \frac { 1 }{ 2\left( N-1 \right)  }  }  } .
+\end{equation}
+
+\section{Stima della media da piccoli campioni} %Media da piccoli campioni
+\label{sec:stima-media-piccoli}
+La media campionaria $M$, se è la somma di $N$ variabili gaussiane, è anch'essa gaussiana per qualunque $N$, e quindi anche la variabile $\frac { M-\mu  }{ \sigma  } \sqrt { N } $ è una variabile standard gaussiana per qualunque $N$, cioè una quantità pivotale.
+
+L'intervallo di confidenza della media si ricava attraverso
+\begin{equation}
+T=\frac { M-\mu  }{ \sigma  } \sqrt { N } \frac { 1 }{ \sqrt { { Q }_{ R } }  } =\frac { M-\mu  }{ S } \sqrt { N }
+\end{equation}
+che è distribuita come la densità di Student \ref{eq:student} con $N-1$ gradi di libertà. L'uso della variabile di Student permette di eliminare dall'intervallo di confidenza la varianza vera (incognita) $\sigma^2$ e di definire una quantità pivotale per la stima di $\mu$.
+
+\section{Stima della varianza da piccoli campioni} %Varianza da piccoli campioni
+\label{sec:stima-var-piccoli}
+Il teorema della varianza campionaria \ref{sec:varianza-campionaria} fornisce la quantità pivotale $\frac { S^{ 2 } }{ \sigma ^{ 2 } } \sim { \chi  }_{ R }^{ 2 }\left( N-1 \right) $. L'intervallo di probabilità è ${ \chi  }_{ R\left( \frac { \alpha  }{ 2 }  \right)  }^{ 2 }\le \frac { { S }^{ 2 } }{ { \sigma  }^{ 2 } } \le { \chi  }_{ R\left( 1-\frac { \alpha  }{ 2 }  \right)  }^{ 2 }$ con ${ \chi  }_{ R\left( \frac { \alpha  }{ 2 }  \right)  }^{ 2 }$ e ${ \chi  }_{ R\left( 1-\frac { \alpha  }{ 2 }  \right)  }^{ 2 }$ presi come valori dei quantili della variabile $Q_R$ corrispondenti al livello di confidenza $CL$ prefissato; perciò l'intervallo di stima della varianza in corrsipondenza di un valore misurato $s^2$ è:
+\begin{equation}
+\frac { { s }^{ 2 } }{ { \chi  }^{ 2 }_{ R\left( 1-\frac { \alpha  }{ 2 }  \right)  } } \le { \sigma  }^{ 2 }\le \frac { { s }^{ 2 } }{ { \chi  }^{ 2 }_{ R\left( \frac { \alpha  }{ 2 }  \right)  } } .
+\end{equation}
+L'intervallo di confidenza per la deviazione standard è invece:
+\begin{equation}
+\frac { { s } }{ \sqrt { { \chi  }^{ 2 }_{ R\left( 1-\frac { \alpha  }{ 2 }  \right)  } }  } \le { \sigma  }\le \frac { { s } }{ \sqrt { { \chi  }^{ 2 }_{ R\left( \frac { \alpha  }{ 2 }  \right)  } }  } .
+\end{equation}
+
+\section{Riassunto} %Riassunto stime
+\label{sec:riassunto-stime}
+\begin{tabularx}{\textwidth}{llllX}
+\toprule
+ & Variabili gaussiane & & Variabili qualunque \\
+\toprule
+ & Intervallo & CL & Intervallo & CL \\
+\midrule
+• Probabilità  &&&& \\
+$nf<10$& - & - & eq. \ref{eq:clopper-pearson} & Binomiale \\
+$N(1-f)>10$& - & - & eq. \ref{eq:CL-normale} & Gauss \\
+• Frequenza &&&& \\
+$x<10$& - & - & eq. \ref{eq:intervalli-eventi-poisson} & Poisson \\
+$x>10$& - & - & eq. \ref{eq:intervalli-eventi-poisson-gauss} & Gauss \\
+• Media &&&& \\
+$N<30$& $m\pm\frac{s}{\sqrt{N}}$ & Student & $\simeq m \pm \frac{s}{\sqrt{N}}$ & ? \\
+$N>30$& $m\pm\frac{s}{\sqrt{N}}$ & Gauss & $m \pm \frac{s}{\sqrt{N}}$ & Gauss \\
+• Varianza &&&& \\
+$N<100$& $\frac { s^{ 2 } }{ \chi ^{ 2 }_{ R1 } } \le \sigma ^{ 2 }\le \frac { s^{ 2 } }{ \chi ^{ 2 }_{ R2 } } $ & $\chi^2_R$ & $\simeq { s }^{ 2 }\pm \sqrt { \frac { D_{ 4 }-s^{ 4 } }{ N-1 }  }$ & ? \\
+$N>100$& eq. \ref{eq:stima-var-var-gauss-grandi} & Gauss & ${ s }^{ 2 }\pm \sqrt { \frac { D_{ 4 }-s^{ 4 } }{ N-1 }  } $ & Gauss \\
+• Dev. standard &&&& \\
+$N<100$& $\sqrt { \frac { s^{ 2 } }{ \chi ^{ 2 }_{ R1 } }  } \le \sigma \le \sqrt { \frac { s^{ 2 } }{ \chi ^{ 2 }_{ R2 } }  } $ & Maxwell & $\simeq { s }\pm \sqrt { \frac { D_{ 4 }-s^{ 4 } }{ 4{ s }^{ 2 }\left( N-1 \right)  }  } $  & ? \\
+$N>100$& eq. \ref{eq:stima-var-dev-gauss-grandi} & Gauss & $ { s }\pm \sqrt { \frac { D_{ 4 }-s^{ 4 } }{ 4{ s }^{ 2 }\left( N-1 \right)  }  } $ & Gauss \\
+\end{tabularx}
+
+\section{Verifica di una ipotesi} %Test d'ipotesi
+\label{sec:test-ipotesi}
+Considerando la densità di probabilità $p\left( x;\theta  \right) $ della variabile $X$ definita come \ref{eq:densità-probab-stat} dipendente dal parametro $\theta$ e si supponga venga assunta l'ipotesi $\theta=\theta_0$. Se l'esperimento fornisce un evento $\{X=x\}$, occorre decidere se accettare o meno il modello corrispondente all'ipotesi.
+
+Si stabilisce a priori un livello di significatività $\alpha$, chiamato anche livello del test o dimensione dell'errore del I tipo, che determina i valori dei quantili ${ x }_{ \frac { \alpha  }{ 2 } }$ e ${ x }_{ 1-\frac { \alpha  }{ 2 } }$.
+\begin{itemize}
+\item Si rifiuta l'ipotesi se il livello di significatività osservato $\alpha_0<\alpha$.
+\item Si accetta l'ipotesi se il livello di significatività osservato $\alpha_0>\alpha$.
+\end{itemize}
+Osservato l'evento occorre calcolare la probabilità, chiamato livello di significatività o p-value:
+\begin{itemize}
+\item $P\left\{ X<x \right\} ={ \alpha  }_{ 0 }$: test a una coda a sinistra;
+\item $P\left\{ X>x \right\} ={ \alpha  }_{ 0 }$: test a una coda a destra;
+\item $P\left\{ \left| X-\mu  \right| >\left| x-\mu  \right|  \right\} ={ \alpha  }_{ 0 }$: test a due code.
+\end{itemize}
+Se si scarta l'ipotesi, la probabilità di sbagliare non supera mai $\alpha$: errore del I tipo.
+
+La verifica d'ipotesi può essere anche fatta con statistiche $T=t\left( { X }_{ 1 },\dots ,{ X }_{ N }  \right) $ che stimano il valore di $\theta$, cioè con degli stimatori. In questo caso alla densità $p\left( x;\theta_0  \right) $ attribuita al campione va sostituita la densità della distribuzione campionaria dello stimatore e tutto procede come prima. Se lo stimatore non è distorto: $\left< T_{ N }\left( X \right)  \right> =\theta _{ 0 }$.
+Il livello di significatività è ora:
+\begin{itemize}
+\item $P\left\{ T<t_0 \right\} =SL< { \alpha  }_{ 0 }$: test a una coda a sinistra;
+\item $P\left\{ T>t_0 \right\} =SL< { \alpha  }_{ 0 }$: test a una coda a destra;
+\item $P\left\{ \left| T-\theta_0  \right| >\left| t_0-\theta_0  \right|  \right\} =SL<{ \alpha  }_{ 0 }$: test a due code.
+\end{itemize}
+
+\subsection{Confronto tra livello del test e SL}
+\begin{itemize}
+\item Per una variabile aleatoria discreta, i livelli SL di due valori contigui possono stare a cavallo del valore deciso per il test.
+\item Nel caso del test a due code, ad un livello $\alpha$ possono corrispondere limiti fiduciari diversi, cioè intervalli di estremi diversi ma con lo stesso livello di confidenza $CL=1-\alpha$. Generalmente in questo caso si scelgono i due estremi, a destra e sinistra, che sottendono code aventi la stessa area $\frac{\alpha}{2}$.
+\end{itemize}
+
+\section{Verifica di compatibilità tra due valori} %Compatibilità tra due valori
+\label{sec:test-due-valori}
+Se, fatti due campionamenti differenti, si volesse verificare che i risultati $x_1$ e $x_2$ siano in accordo tra loro, bisogna procedere in ambito statistico. \\ Si definisce una nuova variabile aleatoria differenza:
+\begin{equation}
+D=X_1-X_2,
+\end{equation}
+la quale ha valore atteso nullo nell'ipotesi che i due valori provengano dalla stessa popolazione \ref{sec:popolazione}. Si può scrivere la varianza di tale variabile:
+\begin{equation}
+Var\left[ D \right] \simeq { s }_{ 1 }^{ 2 }+{ s }_{ 2 }^{ 2 }.
+\end{equation}
+
+Si può infine definire il valore standard da cui calcolare il livello di significatività:
+\begin{equation}
+\label{eq:valore-stand-due-valori}
+\left| { t }_{ D } \right| =\frac { \left| { x }_{ 1 }-{ x }_{ 2 } \right|  }{ \sqrt { { s }_{ 1 }^{ 2 }+{ s }_{ 2 }^{ 2 } }  } .
+\end{equation}
+In questo casi si approssima a grandi campioni e perciò ad una gaussiana.
+
+Generalmente la \ref{eq:valore-stand-due-valori} viene utilizzata per confrontare due frequenze o due medie campionarie:
+\begin{itemize}
+\item Due frequenze $f_1$ e $f_2$, in termini di probabilità:
+\begin{equation}
+{ t }_{ f }=\frac { \left| { f }_{ 1 }-{ f }_{ 2 } \right|  }{ \sqrt { \frac { { f }_{ 1 }\left( 1-{ f }_{ 1 } \right)  }{ { N }_{ 1 } } +\frac { { f }_{ 2 }\left( 1-{ f }_{ 2 } \right)  }{ { N }_{ 2 } }  }  };
+\end{equation}
+\begin{itemize}
+\item se $N_1=N_2=N$ il confronto può essere fatto in termini di numero di successi $x_1$ e $x_2$: 
+\begin{equation}
+{ t }_{ x }=\frac { \left| { x }_{ 1 }-x_{ 2 } \right|  }{ \sqrt { { x }_{ 1 }\left( 1-\frac { { x }_{ 1 } }{ N }  \right) +x_{ 2 }\left( 1-\frac { { x }_{ 2 } }{ N }  \right)  }  } ;
+\end{equation}
+\item se $N_1\neq N_2$ è più utile il confronto con la frequenza.
+\end{itemize}
+\item Due medie $m_1$ e $m_2$:
+\begin{equation}
+{ t }_{ m }=\frac { \left| { m }_{ 1 }-m_{ 2 } \right|  }{ \sqrt { \frac { { s }^{ 2 }_{ 1 } }{ N _1} +\frac { { s }^{ 2 }_{ 2 } }{ N_2 }  }  } ;
+\end{equation}
+\begin{itemize}
+\item se i due campioni sono piccoli e la distribuzione campionaria è gaussiana si utilizza la densità di Student:
+\begin{equation}
+{ t }_{ D }=\frac { { m }_{ 1 }-m_{ 2 } }{ \sqrt { \frac { { \sigma  }^{ 2 }_{ 1 } }{ N_{ 1 } } +\frac { { \sigma  }^{ 2 }_{ 2 } }{ N_{ 2 } }  }  } =\frac { { m }_{ 1 }-m_{ 2 } }{ \sigma \sqrt { \frac { 1 }{ N_{ 1 } } +\frac { 1 }{ N_{ 2 } }  }  } .
+\end{equation}
+Per utilizzarla con valori campionati e non veri bisogna apporre la correzione di continuità ${ s }_{ 1,2 }=\sqrt { \frac { \left( { N }_{ 1 }-1 \right) { s }_{ 1 }^{ 2 }+\left( { N }_{ 2 }-1 \right) { s }_{ 2 }^{ 2 } }{ { N }_{ 1 }+{ N }_{ 2 }-2 }  } $ e il risultato è:
+\begin{equation}
+{ t }_{ D }=\frac { { m }_{ 1 }-m_{ 2 } }{ { s }_{ 1,2 }\sqrt { \frac { 1 }{ N_{ 1 } } +\frac { 1 }{ N_{ 2 } }  }  } 
+\end{equation}
+\end{itemize}
+\end{itemize}
+
+\section{Stima della densità di una popolazione} %Densità di una popolazione
+\label{sec:test-densità}
+Se $p\left( x \right) $ è la densità della popolazione del campione, definendo le variabili aleatorie $I$ e $F$ associate agli eventi $\left\{ { I }_{ i }={ n }_{ i } \right\} $ e $\left\{ { F }_{ i }=\frac { { n }_{ i } }{ N }  \right\} $, dalla \ref{sec:dens-continue} segue:
+\begin{equation}
+\label{eq:valore-atteso}
+\left< { I }_{ i } \right> ={ \mu  }_{ i }=N{ p }_{ i }\simeq Np\left( { x }_{ 0 } \right) \Delta x,
+\end{equation}
+\begin{equation}
+\left< { F }_{ i } \right> ={ p }_{ i }\simeq p\left( { x }_{ 0 } \right) \Delta x
+\end{equation}
+dove $\Delta x$ è la larghezza del canale dell'istogramma e $x_0$ un punto interno ad esso.
+
+Il numero di eventi $I_i$ caduti in un generico canale segue la distribuzione binomiale \ref{sec:binomiale}:
+\begin{itemize}
+\item se il fenomeno stocastico è stazionario nel tempo, la probabilità $p_i$ di cadere nel canale resta costante;
+\item la probabilità di cadere nel canale non dipende dagli eventi che sono caduti o che cadranno negli altri canali.
+\end{itemize}
+La probabilità è perciò:
+\begin{equation}
+P\left\{ { I }_{ i }={ n }_{ i } \right\} =b\left( { n }_{ i };N,{ p }_{ i } \right) =\frac { N! }{ { n }_{ i }!\left( N-{ n }_{ i } \right) ! } { p }_{ i }^{ { n }_{ i } }{ \left( 1-{ p }_{ i } \right)  }^{ N-{ n }_{ i } }.
+\end{equation}
+La deviazione standard:
+\begin{equation}
+{ \sigma  }_{ i }=\sqrt { N{ p }_{ i }\left( 1-{ p }_{ i } \right)  } .
+\end{equation}
+Questa quantità può essere stimata attraverso l'incertezza $s_i \equiv s \left ( n_i \right)$:
+\begin{itemize}
+\item Se il canale ha più di $5$, $10$ elementi:
+\begin{equation}
+{ s }_{ i }=\sqrt { { n }_{ i }\left( 1-\frac { { n }_{ i } }{ N }  \right)  } 
+\end{equation}
+\item Se l'istogramma è normalizzato: 
+\begin{equation}
+{ s }\left( \frac { { n }_{ i } }{ N }  \right) =\sqrt { \frac { { f }_{ i }\left( 1-{ f }_{ i } \right)  }{ N }  } 
+\end{equation}
+\item Se l'istogramma non è ottenuto con numero totale $N$ di eventi costante ma è raccolto controllando altri parametri: il numero $N$ si trasforma da costante a variabile statistica N poissoniana e le fluttuazioni del contenuto dei canali vanno calcolate in modo diverso. \\ In base alla legge delle probabilità composte \ref{sec:prob-totali} la probabilità di osservare $N$ eventi sarà data dal prodotto della probabilità poissoniana \ref{sec:poisson} di ottenere un totale $\left\{ \textrm{N}=N \right\} $ di eventi quando la media è $\lambda$ e dalla probabilità binomiale \ref{sec:binomiale} di avere $n_i$ eventi nel canale in esame, su un totale di $N$, quando la probabilità vera è $p_i$:
+\[
+P\left\{ { I }_{ i }={ n }_{ i },\textrm{N}=N \right\} =\frac { N! }{ { n }_{ i }!\left( N-{ n }_{ i } \right) ! } { p }_{ i }^{ { n }_{ i } }{ \left( 1-{ p }_{ i } \right)  }^{ N-{ n }_{ i } }\frac { { e }^{ -\lambda  }{ \lambda  }^{ N } }{ N! } .
+\]
+Definendo $m_i=N-n_i$:
+\[
+p\left\{ { n }_{ i },{ m }_{ i } \right\} =\frac { { e }^{ -\lambda { p }_{ i } }{ \left( \lambda { p }_{ i } \right)  }^{ { n }_{ i } } }{ { n }_{ i }! } \frac { { e }^{ -\lambda \left( 1-{ p }_{ i } \right)  }{ \left[ \lambda \left( 1-{ p }_{ i } \right)  \right]  }^{ { m }_{ i } } }{ { m }_{ i }! },
+\]
+prodotto di due poissoniane di media $\lambda p_i$ e $\lambda \left( 1-{ p }_{ i } \right) $ rispettivamente.
+Si ha quindi la varianza:
+\begin{equation}
+{ s }\left( \frac { { n }_{ i } }{ N }  \right) =\sqrt { \frac { { f }_{ i } }{ N }  } .
+\end{equation}
+\end{itemize}
+
+La stima del numero di eventi veri $\mu_i$ (valori attesi) nel canale $i$-esimo è dato dalla \ref{eq:valore-atteso} e l'intervallo di confidenza è:
+\begin{itemize}
+\item Per istogrammi raccolti con numero di eventi $N$ determinato:
+\begin{equation}
+{ \mu  }_{ i }\in { n }_{ i }\pm \sqrt { { n }_{ i }\left( 1-\frac { { n }_{ i } }{ N }  \right)  } ..
+\end{equation}
+Per istogrammi normalizzati:
+\begin{equation}
+p_i \in f_i \pm \sqrt { \frac { { f }_{ i }\left( 1-{ f }_{ i } \right)  }{ N }  }, \qquad f_i\equiv \frac{n_i}{N} .
+\end{equation}
+\item Per istogrammi in cui il numero totale di eventi N è una variabile poissoniana
+\begin{equation}
+{ \mu  }_{ i }\in { n }_{ i }\pm \sqrt { n_{ i } } .
+\end{equation}
+Per istogrammi normalizzati:
+\begin{equation}
+p_i \in f_i \pm\sqrt { \frac { { f }_{ i } }{ N }  } .
+\end{equation}
+\end{itemize}
+
+\section{Verifica di compatibilità tra campione e popolazione} %Compatibilità tra campione e popolazione
+\label{sec:test-campione-popolazione}
+Oltre a poter valutare " ad occhio" si può utilizzare il test $\chi^2$. Bisogna conoscere (o assumere come ipotesi nulla) le probabilità vere $p_i$ di ogni canale ed eseguire su tutti i $K$ canali:
+\begin{equation}
+\label{eq:somma-compatibilità}
+{ \chi  }^{ 2 }=\sum _{ i=1 }^{ K }{ \frac { { \left( { n }_{ i }-{ \mu  }_{ i } \right)  }^{ 2 } }{ { \mu  }_{ i } }  } =\sum _{ i=1 }^{ K }{ \frac { { \left( { n }_{ i }-N{ p }_{ i } \right)  }^{ 2 } }{ N{ p }_{ i } }  } .
+\end{equation}
+\begin{itemize}
+\item Se il numero totale N di eventi è variabile e si somma sui canali con più di 5, 10 eventi: la \ref{eq:somma-compatibilità} risulta essere approssimativamente la somma del quadrato di $K$ variabili gaussiane standard indipendenti e pertanto in base al teorema di Pearson \ref{sec:pearson}, essa si distribuisce approssimativamente come la densità $\chi^2$ \ref{sec:chi-quadro} con $K$ gradi di libertà.
+\item Se il numero totale $N$ di eventi è costante: le variabili della \ref{eq:somma-compatibilità} sono correlate ma hanno una densità $\chi^2$ \ref{sec:chi-quadro} con $\left(K-1\right)$ gradi di libertà.
+\end{itemize}
+Occorre sempre sommare il quadrato delle differenze tra le frequenze osservate e quelle vere e dividere per le frequenze vere, avendo cura di ricordarsi che i gradi di libertà sono pari al numero di canali se N è una variabile poissoniana, mentre vanno diminiuti di un'unità se $N$ è costante.
+
+La densità $\chi^2$ è asimmetrica.
+\begin{itemize}
+\item Test a una coda (coda destra): livello di significarività:
+\begin{equation}
+SL=P\left\{ { Q }_{ R }\left( \nu  \right)\ge { \chi  }_{ R }^{ 2 }\left( \nu  \right)  \right\} 
+\end{equation}
+\item Test a due code: livelli di significatività
+\begin{equation}
+SL=2P\left\{ { Q }_{ R }\left( \nu  \right) >{ \chi  }_{ R }^{ 2 }\left( \nu  \right)  \right\} \quad \textrm{se}\quad P\left\{ { Q }_{ R }\left( \nu  \right) >{ \chi  }_{ R }^{ 2 }\left( \nu  \right)  \right\} <0.5
+\end{equation}
+\begin{equation}
+SL=2P\left\{ { Q }_{ R }\left( \nu  \right) <{ \chi  }_{ R }^{ 2 }\left( \nu  \right)  \right\} \quad \textrm{se}\quad P\left\{ { Q }_{ R }\left( \nu  \right) >{ \chi  }_{ R }^{ 2 }\left( \nu  \right)  \right\} >0.5
+\end{equation}
+\item Quando $P\left\{ { Q }_{ R }\left( \nu  \right)> { \chi  }_{ R }^{ 2 }\left( \nu  \right)  \right\} <0.01$ il valore di $\chi^2$ ridotto trovato si situa nella coda a destra e risulta troppo alto: è altamente probabile che la densità della popolazione assunta come modello non sia quella vera.
+\item Quando $P\left\{ { Q }_{ R }\left( \nu  \right)> { \chi  }_{ R }^{ 2 }\left( \nu  \right)  \right\} >0.99$ il valore di $\chi^2$ ridotto trovato è troppo alto.
+\end{itemize}
+
+Spesso il $\chi^2$ di un istogramma viene calcolato dividendo le frequenze misurate invece che per quelle vere:
+\begin{equation}
+{ \chi  }^{ 2 }=\sum _{ i=1 }^{ K }{ \frac { { \left( { n }_{ i }-N{ p }_{ i } \right)  }^{ 2 } }{ { n }_{ i } }  } .
+\end{equation}

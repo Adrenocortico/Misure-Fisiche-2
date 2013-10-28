@@ -1,0 +1,114 @@
+\chapter{Statistica multidimensionale} %Statistica multidimensionale
+\section{Densità congiunta} %Densità congiunta
+\label{sec:densità-congiunta}
+Definendo la probabilità composta $P(AB)\equiv P \{x_1 \le X \le x_2 , y_1 \le X \le y_2\}$, se esiste una funzione $p(x,y)\ge 0$ tale che:
+\[
+P\left\{ x_{ 1 }\le X\le x_{ 2 },y_{ 1 }\le Y\le y_{ 2 } \right\} =\int _{ x_{ 1 } }^{ x_{ 2 } } \int _{ y_{ 1 } }^{ y_{ 2 } }{ p\left( x,y \right) \textrm{d}x \textrm{ d}y } 
+\]
+si dice che essa è la densità congiunta di probabilità per due variabili.
+
+Se $p(x,y)$ soddisfa quest'equazione, la probabilità che $(X,Y)\in A$ è data da:
+\begin{equation}
+P\left\{ \left( X,Y \right) \in A \right\} =\int _{ A }{ p\left( x,y \right) \textrm{d}x \textrm{ d}y } 
+\end{equation}
+analogo del livello di probabilità $P\left\{ a\le X\le b \right\} =\int _{ a }^{ b }{ p\left( x \right) \textrm{d}x } $.
+\`E normalizzata; ha media: 
+\begin{equation}
+\left< X \right> =\mu _{ x }\qquad \left< Y \right> =\mu _{ y }
+\end{equation}
+e varianza:
+\begin{equation}
+\textrm{Var}\left[ X \right] =\sigma ^{ 2 }_{ x }\qquad \textrm{Var}\left[ Y \right] =\sigma ^{ 2 }_{ y }.
+\end{equation}
+
+Se $X$ e $Y$ sono stocasticamente indipendenti, si definisce la densità congiunta come:
+\begin{equation}
+\label{eq:densità-congiunta-indip}
+p\left( x,y \right) =p_X\left( x \right) p_Y\left( y \right) .
+\end{equation}
+
+Media e varianza di combinazioni di variabili:
+\begin{equation}
+\left< XY \right> =\mu _{ xy }\qquad \textrm{Var}\left[ XY \right] =\int { (xy-\mu _{ xy })^{ 2 }p(x,y) \textrm{d}x \textrm{ d}y }
+\end{equation}
+\begin{equation}
+\left< X+Y \right> =\mu _{ x+y } \qquad \textrm{Var}\left[ X+Y \right] =\int { (x+y-\mu _{ x+y })^{ 2 }p(x,y) \textrm{d}x \textrm{ d}y } 
+\end{equation}
+
+\section{Densità marginale} %Densità marginale
+\label{sec:densità-marginale}
+Se $X$ e $Y$ sono due variabili aleatorie con densità $p(x,y)$ ed $A$ è un intervallo dell'asse reale, la densità marginale $p_{X}(x)$ è definita dalla relazione:
+\begin{equation}
+P\left\{ X\in A \right\} =\int _{ A }{ p_X(x)dx } =\int _{ A }{dx} \int _{ -\infty }^{ +\infty }{ p(x,y)dy } 
+\end{equation}
+da cui:
+\begin{equation}
+\label{eq:densità-marginale-x}
+p_{ X }(x)=\int _{ -\infty  }^{ +\infty  }{ p(x,y)dy } .
+\end{equation}
+La densità marginale $p_{Y}(y)$ si ottiente dall'equazione \ref{eq:densità-marginale-x}, scambiando $x$ con $y$. \\ Sono normalizzate.
+
+\section{Indipendenza di variabili} %Indipendenza di variabili
+\label{sec:indipendenza-variabili}
+Due variabili aleatorie $(X,Y)$ di densità congiunta $p(x,y)$, sono stocasticamente indipendenti se e solo se esistono due funzioni $g(x)$ e $h(x)$ tali che per ogni $x,y \in \mathbb{R}$, si abbia:
+\begin{equation}
+p\left( x,y \right) =g\left( x \right) h\left( y \right) .
+\end{equation}
+
+\section{Densità condizionata} %Densità condizionata
+\label{sec:densità-condizionata}
+Se $X$ e $Y$ sono due variabili aleatorie con densità $p(x,y)$, la densità condizionata $p\left( y|{ x }_{ 0 } \right) $ di $y$ per ogni $x=x_0$ fissato e tale che $p_{ X }\left( x_{ 0 } \right) >0$, è data da:
+\begin{equation}
+p\left( y|{ x }_{ 0 } \right) =\frac { p\left( x_{ 0 },y \right)  }{ p_{ X }\left( x_{ 0 } \right)  } =\frac { p\left( x_{ 0 },y \right)  }{ \int _{ -\infty  }^{ +\infty  }{ p\left( x_{ 0 },y \right) \textrm{d}y }  } .
+\end{equation}
+\`E normalizzata.
+
+\section{Covarianza di due variabili} %Covarianza di due variabili
+\label{sec:covarianza-più-var}
+La covarianza di due variabili $X$ e $Y$ è definita come:
+\begin{equation}
+\label{eq:covarianza}
+\textrm{Cov} \left[ X,Y \right] =\int  \int { \left( x-\mu _{ x } \right) \left( y-\mu _{ y } \right) p\left( x,y \right) \textrm{d}x \textrm{ d}y } \equiv \sigma _{ xy }.
+\end{equation}
+
+Quando la covarianza è calcolata attraverso la funzione di densità, la sommatoria è doppia e va fatto sulle probabilità delle coppie dei valori possibili delle due variabili; quando la covarianza è calcolata da un insieme sperimentale di dati, la somma è singola e va fatta su tutte le coppie ottenute nel campionamento.
+
+Esiste un'interessante relazione:
+\[
+\textrm{Cov} \left[ X,Y \right] =\left< \left( X-\mu _{ x } \right) \left( Y-\mu _{ y } \right)  \right> =\left< XY \right> -\mu _{ x }\mu _{ y }.
+\]
+
+La covarianza di due variabili gode della proprietà di annullarsi quando le variabili sono indipendenti \ref{subsec:indipendenti}.
+
+\section{Correlazione tra variabili} %Correlazione tra variabili
+\label{sec:correlazione-più-var}
+Viene definito come coefficiente di correlazione il rapporto tra la covarianza e le varianze delle variabili aleatorie a cui si riferisce la covarianza:
+\begin{equation}
+\label{eq:correlazione}
+\rho _{ xy }\equiv \rho \left[ X,Y \right] =\frac { \textrm{Cov} \left[ X,Y \right]  }{ \sigma \left[ X \right] \sigma \left[ Y \right]  } 
+\end{equation}
+Gode della proprietà: $-1 \le \rho_{xy} \le 1$.
+
+Due variabile aleatorie si dicono incorrelate quando il loro coefficiente di correlazione è nullo, si docono correlato in caso contrario. Se due variabili sono statisticamente indipendenti, allora sono anche incorrelate.
+\begin{itemize}
+\item[-] Condizione sufficiente perché vi sia dipendenza statistica è la presenza di correlazione;
+\item[-] condizione necessaria per l'indipendenza statistica è la mancanza di correlazione ($\rho_{xy}=0$).
+\end{itemize}
+
+\section{Densità normali condizionate} %Densità normali condizionate
+\label{sec:densità-normali-condizionate}
+Rielaborando la \ref{eq:gauss-standard-correlazione}, notando che è del tipo della \ref{eq:gauss} si ottiene:
+\begin{equation}
+g\left( y|x \right) =\frac { 1 }{ { \sigma  }_{ y }\sqrt { 2\pi \left( 1-{ \rho  }^{ 2 } \right)  }  } \textrm{exp} \left[ -\frac { { \left( y-{ \mu }_{ y }-\rho \frac { { \sigma }_{ y } }{ { \sigma }_{ x } } \left( x-{ \mu }_{ x } \right)  \right)  }^{ 2 } }{ 2{ \sigma }_{ y }^{ 2 }\left( 1-{ \rho }^{ 2 } \right)  }  \right].
+\end{equation}
+Ha media:
+\[
+\left( Y|x \right) =\mu _{ x }+\rho \frac { \sigma _{ y } }{ \sigma _{ x } } \left( x-\mu _{ x } \right) 
+\]
+e varianza:
+\[
+Var\left[ Y|x \right] =\sigma _{ x }^{ 2 }\left( 1-\rho ^{ 2 } \right) .
+\]
+La media di $Y$ condizionata ad $x$ si dispone, nel piano $(x,y)$ ed al variare di $x$, lungo una retta, detta di regressione. Tra le medie condizionate della gaussiana bivariata esiste un legame di regressione lineare. La varianza di $Y$ si mantiene costante e dipende da $x$ solo attraverso il coefficiente di correlazione.
+
+La varianza condizionata misura la dispersione dei dati intorno alla retta di regressione ed è sempre $\le$ di quella proiettata $\sigma_{y}^{2}$.

@@ -1,0 +1,106 @@
+\chapter{Teoremi} %Teoremi
+\section{Teorema di additività} %Additività
+\label{sec:th-add}
+La probabilità dell'evento dato dal verificarsi degli eventi elementari A oppure B, nel caso generale in cui $A \cap B \ne \emptyset$ è data da:
+\begin{equation}
+P(A\cup B)=P(A)+P(B)-P(A\cap B).
+\end{equation}
+
+\section{Teorema del prodotto} %Prodotto
+\label{sec:th-prod}
+Per le probabilità classica e frequentista, la probabilità che si verifichi l'evento costituito dalla realizzazione degli eventi elementari A e B è data da:
+\begin{equation}
+P(A\cap B)=P(A|B)P(B)=P(B|A)P(A).
+\end{equation}
+
+\section{Teorema di Bayes} %Bayes
+\label{sec:th-bayes}
+Se gli elementi soddisfano a $\bigcup _{ i=1 }^{ n }{ B_{ i } } =S$, ${ B }_{ i }\cap { B }_{ k }=\emptyset $ per $\forall i,k$, la probabilità condizionata $P({ B }_{ k }|A)$ si può scrivere come:
+\begin{equation}
+P({ B }_{ k }|A)=\frac { P(A|{ B }_{ k })P({ B }_{ k }) }{ \sum _{ i=1 }^{ n }{ P(A|{ B }_{ i })P({ B }_{ i }) }  } \qquad P(A)>0.
+\end{equation}
+
+\paragraph{Formula delle probabilità totali} %Probabilità totali
+\label{sec:prob-totali}
+\begin{equation}
+P(A)=\sum _{ i=1 }^{ n }{ P(A|{ B }_{ i })P({ B }_{ i }) } .
+\end{equation}
+
+\section{Legge 3-$\sigma$} %3-sigma
+\label{sec:tre-sigma}
+Se $X$ è una variabile gaussiana di media $\left< X \right> =\mu $ e di deviazione standard $\sigma \left[ X \right] =\sigma $, la probabilità di ottenere un valore $x$ compreso in un intervallo centrato sulla media $\mu$ e di ampiezza $\pm \sigma$ è di circa il $68\%$, con $\pm 2\sigma$ è di circa il $95\%$, con $\pm 3\sigma$ è di circa il $99\%$:
+\begin{equation}
+P\left\{ \left| X-\mu  \right| \le +k\sigma  \right\} \equiv \frac { 1 }{ \sqrt { 2\pi \sigma  }  } \int _{ \mu -k\sigma  }^{ \mu +k\sigma  }{ \textrm{exp}\left[ -\frac { 1 }{ 2 } { \left( \frac { x-\mu  }{ \sigma  }  \right)  }^{ 2 } \right] \textrm{d}x } = \begin{cases} 0.682, & \text{\textrm{per}\quad k=1} \\ 0.954, &  \text{\textrm{per}\quad k=2} \\ 0.997, & \text{\textrm{per}\quad k=3} \end{cases}.
+\end{equation}
+
+\subsection{Disuguaglianza di Tchebychev} %Disuguaglianza di Tchebychev
+\label{subsec:disuguaglianza-tche}
+Negli intervalli centrati sulla media e ampi $2\sigma$ e $3\sigma$ sono compresi rispettivamente almeno il $75\%$ e il $90\%$ della probabilità totale:
+\begin{equation}
+P\left\{ \left| X-\mu  \right| \le +K\sigma  \right\} \equiv \int _{ \mu -K\sigma  }^{ \mu +K\sigma  }{ p(x){ d }x } \ge 1-\frac { 1 }{ { K }^{ 2 } } =\begin{cases} 0, & \text{ \textrm{ per }\quad K=1 } \\ 0.75, & \text{ \textrm{ per }\quad K=2 } \\ 0.89, & \text{ \textrm{ per }\quad K=3 } \end{cases}.
+\end{equation}
+Questa legge è una legge 3-$\sigma$ generalizzata.
+
+\section{Teorema Limite Centrale} %Teorema Limite Centrale
+\label{sec:limite-centrale}
+Sia $Y$ una variabile aleatoria \ref{sec:variabile-aleatoria} lineare di $N$ variabili aleatorie $X_i$: ${ Y }_{ N }=\sum _{ i=1 }^{ N }{ { a }_{ i }{ X }_{ i } } $ dove gli $a_i$ somo coefficienti costanti. Se:
+\begin{itemize}
+\item[a)] le variabili $X_i$ sono tra loro indipendenti (\ref{subsec:var-indipendenti});
+\item[b)] le variabili $X_i$ hanno varianza \ref{sec:varianza} finita;
+\item[c)] le varianze (o deviazioni standard) sono tutte dello stesso ordine di grandezza;
+\end{itemize}
+allora, per $N\rightarrow \infty $, la variabile aleatoria $Y_N$ converge in legge, secondo la \ref{sec:in-legge}, verso la distribuzione gaussiana.
+
+\section{Teorema dell'indipendenza stocastica} %Teorema dell'indipendenza stocastica
+\label{sec:indipendenza-stocastica}
+Condizione necessaria e sufficiente perché un processo sia stazionario di Poisson è che gli intertempi siano indipendenti (tempi tra gli arrivi: variabili aleatorie indipendenti \ref{subsec:indipendenti}) ed abbiano legge esponenziale negativa \ref{sec:esponenziale-negativa}, con equazione \ref{eq:esponenziale-negativa}.
+
+\section{Teorema di Pearson} %Teorema di Pearson
+\label{sec:pearson}
+La somma dei quadrati di $\nu$ variabili gaussiane indipendenti \ref{subsec:indipendenti} è una variabile aleatoria che ha densità $\chi^2$ \ref{eq:chi-quadro} con $\nu$ gradi di libertà, detta $\chi^{2}(\nu)$.
+
+\section{Additività della variabile $\chi^2$} %Additività chi
+\label{sec:add-chi}
+Siano $Q_1$ e $Q_2$ due variabili aleatorie indipendenti \ref{subsec:indipendenti}. Se esse hanno densità $\chi^2$ con $\nu_1$ e $\nu_2$ gradi di libertà rispettivamente, la variabile $Q=Q_{1}+Q_{2}$ ha una densità $\chi^2(\nu)$ con $\nu=\nu_{1}+\nu_{2}$ gradi di libertà: $Q\sim { \chi  }^{ 2 }\left( \nu_1+\nu_2 \right) $. \\ Inoltre, se $Q\sim { \chi  }^{ 2 }\left( \nu  \right) $ e $Q_1\sim { \chi  }^{ 2 }\left( \nu_1  \right) $, allora $Q_2\sim { \chi  }^{ 2 }\left(\nu- \nu_1  \right) $.
+
+\section{Teorema delle variabili aleatore comulative} %Teorema delle variabili aleatore comulative
+\label{sec:variabili-comulative}
+Se $X$ è una variabile aleatoria \ref{sec:variabile-aleatoria} avente densità $p(x)$ continua, la variabile aleatoria comulativa $C$:
+\begin{equation}
+C\left( X \right) =\int _{ -\infty  }^{ X }{ p\left( x \right) dx } 
+\end{equation}
+è uniforme in $[0,1]$, cioè $C\sim U(0,1)$.
+
+\section{Teorema di Cauchy-Schwarz} %Cauchy-Schwarz
+\label{sec:th-cauchy-schwarz}
+Se le variabili $X$ e $Y$ hanno varianze finite, vale la disuguaglianza:
+\begin{equation}
+\left| \textrm{Cov} \left[ X,Y \right]  \right| \le \sigma\left[ X \right] \sigma \left[ Y \right] .
+\end{equation}
+
+\section{Teorema di indipendenza di variabili gaussiane} %Indipendenza di variabili gaussiane
+\label{sec:indipendenza-variabili-gaussiane}
+Condizione necessaria e sufficiente affinché due variabili aleatorie congiuntamente gaussiane (normali) siano indipendenti, è che il loro coefficiente di correlazione \ref{eq:correlazione} lineare sia nullo.
+
+L'esistenza di una covarianza nulla (che implica $\rho =0$) tra variabili gaussiane assicura la indipendenza statistica e quindi l'assenza di un legame causa-effetto tra di esse.
+
+\section{Teorema del cambiamento di variabile in funzioni densità} %Cambiamento di variabile in funzioni densità
+\label{sec:cambiamento-var-densità}
+Siano $X\equiv(X_1,\dots ,X_n)$ $n$ variabili casuali con densità congiunta $p_{X}\{x\}$ e siano $Z\equiv(Z_1,\dots ,Z_n$ $n$ variabili legate alle $X$ dalle $n$ relazioni fondamentali \\ $Z_1=f_1(X) \dots Z_n=f_n(X)$, le quali siano tutte invertibili e derivabili con derivata continua rispetto a tutti gli argomenti (vi sia cioè una corrispondenza biunivoca tra i due domini delle $X$ e delle $Z$, per cui $X_1=f_{1}^{-1}(Z) \dots$). \\ La densità di probabilità $p_Z$ è allora data da
+\begin{equation}
+\label{eq:camb-var-densità}
+p_{ Z }\left( z_{ 1 },\dots ,z_{ n } \right) =p_{ X }\left( f_{ 1 }^{ -1 }\left( z \right) ,\dots ,f_{ n }^{ -1 }\left( z \right)  \right) \left| J \right| 
+\end{equation}
+dobe $|J|$ è lo jacobiano definito come il valore assoluto del determinante della matrice dei $\frac { \partial f_{ i }^{ -1 } }{ \partial z_{ i } } $. \\Ovviamente la trasformazione è possibile se tutte le derivate sono continue e $|J|\neq 0$. Nel caso non vi sia un'unica trasformazione $f_i=(i=1,\dots ,n)$ che sia invertibile, occorre suddividere i domini delle $X$ e delle $Z$ in $m$ sottoinsiemi tra loro disgiunti tra i quali esista una corrispondenza biunivoca e sommare la \ref{eq:camb-var-densità} su tali domini.
+
+\section{Indipendenza di $M$ e $S^2$} %Indipendenza della media e varianza
+\label{sec:indip-media-var}
+Se $\left( { X }_{ 1 },\dots ,{ X }_{ N } \right) $ è un campione casuale di dimensione $N$ estratto da una popolazione avente densità normale $g\left( x;\mu ,\sigma  \right) $, $M$ ed $S^2$ sono variabili aleatorie indipendenti.
+
+\section{Varianza campionaria} %Varianza campionaria
+\label{sec:varianza-campionaria}
+Se $\left( { X }_{ 1 },\dots ,{ X }_{ N } \right)$ è un campione casuale estratto da una popolazione avente densità normale $g\left( x;\mu ,\sigma  \right) $, la variabile
+\begin{equation}
+{ Q }_{ R }=\frac { { S }^{ 2 } }{ { \sigma  }^{ 2 } } =\frac { 1 }{ N-1 } \sum _{ i }{ \frac { { \left( { X }_{ i }-M \right)  }^{ 2 } }{ { \sigma  }^{ 2 } }  } 
+\end{equation}
+ha densità $\chi^2$ ridotto \ref{eq:chi-ridotto-int} con $N-1$ gradi di libertà \ref{sec:gradi-libertà}. Essa è pertanto una quantità pivotale rispetto a $\sigma^2$.

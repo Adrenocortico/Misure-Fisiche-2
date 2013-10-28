@@ -1,0 +1,31 @@
+\chapter{Criteri di convergenza} %Criteri di convergenza
+\label{cha:criteri-convergenza}
+Ricollegandosi alla probabilità \ref{sec:probabilità} vengono definiti tre criteri di convergenza:
+\section{Limite in probabilità} %Limite in probabilità
+\label{sec:lim-probabilità}
+Una successione di variabili $X_N$ converge verso una variabile $X$ se, prefissato un numero $\varepsilon >0$ comunque piccolo, la probabilità che $X_N$ differisca da $X$ per una quantità $>\varepsilon$ tende a zero per $N\rightarrow \infty $:
+\begin{equation}
+\lim _{ N\rightarrow \infty  }{ P\left[ \left| { X }_{ N }\left( a \right) -X\left( a \right)  \right| \ge \varepsilon  \right] }=0 .
+\end{equation}
+Dire che questa probabilità tenda a zero non assicura affatto che tutti i \emph{valori} $\left| { X }_{ N }\left( a \right) -X\left( a \right)  \right| $, per ogni elemento $a$ dello spazio campionario, si manterranno minori di $\varepsilon$ al di sopra di un certo $N$, ma solo che l'insieme dei valori che superano $\varepsilon$ ha una probabilità piccola, al limite nulla. \\ Essa implica la probabilità in legge \ref{sec:in-legge}.
+
+\section{Limite quasi certo} %Limite quasi certo
+\label{sec:lim-quasi-certo}
+Se si vuole che per la maggior parte delle successioni si abbia $\left| { X }_{ N }\left( a \right) -X\left( a \right)  \right| \le \varepsilon $ per ogni $a$, si introduce:
+\begin{equation}
+P\left\{ \lim _{ N\rightarrow \infty  }{ \left| { X }_{ N }\left( a \right) -X\left( a \right)  \right| \le \varepsilon  }  \right\} =1
+\end{equation}
+sull'insieme degli elementi $a$ dello spazio di probabilità $(S,\mathcal{F},P)$ \ref{sec:spazio-probabilità}. \\In questo caso siamo sicuri che esista un insieme di elementi $a$, che per $N\rightarrow \infty $ tende a coincidere con lo spazio campionario $S$. \\ Essa implica sia la probabilità in legge \ref{sec:in-legge} sia quella in probabilità \ref{sec:lim-probabilità}.
+
+Un teorema fondamentale di Kolmogorov assicura la convergenza quasi certa di successioni di variabili aleatorie indipendenti \ref{subsec:var-indipendenti} se vale la condizione:
+\begin{equation}
+\sum _{ N }{ \frac { \textrm{Var}\left[ { X }_{ N } \right]  }{ { N }^{ 2 } }  } <+\infty 
+\end{equation}
+
+\section{Convergenza in legge o distribuzione} %In legge o distribuzione
+\label{sec:in-legge}
+Una successione di variabili $X_N$ converge ad una variabile $X$ se, essendo ${ F }_{ { X }_{ N } }$ e $F_X$ le rispettive formule di ripartizione (o comulative) \ref{sec:comulativa}:
+\begin{equation}
+\lim _{ N\rightarrow \infty  }{ { F }_{ { X }_{ N } }\left( x \right)  } ={ F }_{ { X } }\left( x \right) 
+\end{equation}
+per ogni punto $x$ in cui $F_{X}(x)$ è continua.

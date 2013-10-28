@@ -1,0 +1,61 @@
+\chapter{Media, varianza, deviazione standard} %Media, varianza, deviazione
+\section{Media $\mu$} %Media
+\label{sec:media}
+Se $x_{i}$ sono le $N$ realizzazioni numeriche di una variabile aleatoria \ref{sec:variabile-aleatoria}, la media campionaria è definita:
+\begin{equation}
+m=\frac { 1 }{ N } \sum _{ i=1 }^{ N }{ { x }_{ i } }.
+\end{equation}
+\\ Per una variabile aleatoria vale:
+\begin{equation}
+\mu =\sum _{ k=1 }^{ \infty  }{ { x }_{ k }{ p }_{ k } } \rightarrow \mu =\int _{ -\infty  }^{ +\infty  }{ xp(x)\textrm{d}x }. 
+\end{equation}
+\begin{equation}
+m=\sum _{ k=1 }^{ C }{ { f }_{ k }{ x }_{ k } } .
+\end{equation}
+\\ Proprietà:
+\[
+\left< \alpha X \right> =\alpha \left< X \right> \qquad \left< X+\alpha  \right> =\left< X \right> +\alpha 
+\]
+
+\section{Varianza $\sigma^2$} %Varianza
+\label{sec:varianza}
+Se $x_{i}$ sono le $N$ realizzazioni numeriche di una variabile aleatoria \ref{sec:variabile-aleatoria}, la varianza campionaria è definita:
+\begin{equation}
+{ s }_{ \mu  }^{ 2 }=\frac { 1 }{ N } \sum _{ i=1 }^{ N }{ { ({ x }_{ i }-\mu ) }^{ 2 } }
+\end{equation}
+dove $\mu$ è il valore della media assegnata a priori. \\ La varianza rispetto alla media campionaria m \ref{sec:media} è invece:
+\begin{equation}
+{ s }_{ m }^{ 2 }=\frac { \sum _{ i=1 }^{ N }{ { ({ x }_{ i }-m) }^{ 2 } }  }{ N-1 } =\frac { N }{ N-1 } \frac { \sum _{ i=1 }^{ N }{ { ({ x }_{ i }-m) }^{ 2 } }  }{ N } .
+\end{equation}
+\\ Per una variabile aleatoria vale:
+\begin{equation}
+{ \sigma  }^{ 2 }=\sum _{ k=1 }^{ \infty  }{ { ({ x }_{ k }-\mu ) }^{ 2 }{ p }_{ k } } \rightarrow { \sigma  }^{ 2 }=\int _{ -\infty  }^{ +\infty  }{ { ({ x }-\mu ) }^{ 2 }{ p }(x)\textrm{d}x } .
+\end{equation}
+\\ La varianza può essere anche espressa come:
+\begin{equation}
+{ s }_{ \mu  }^{ 2 }=\sum _{ k=1 }^{ C }{ ({ f }_{ k }{ x }_{ k }^{ 2 }) } -{ \mu  }^{ 2 },
+\end{equation}
+\begin{equation}
+{ s }_{ m }^{ 2 }=\frac { N }{ N-1 } \left[ \frac { \sum _{ i=1 }^{ N }{ { x }_{ i }^{ 2 } }  }{ N } -{ m }^{ 2 } \right],
+\end{equation}
+\begin{equation}
+ { \sigma  }^{ 2 }=\sum _{ k=1 }^{ C }{ ({ p }_{ k }{ x }_{ k }^{ 2 }) } -{ \mu  }^{ 2 }\rightarrow { \sigma  }^{ 2 }=\int _{ -\infty  }^{ +\infty  }{ { x }^{ 2 }p(x)\textrm{d}x } -{ \mu  }^{ 2 }.
+\end{equation}
+\\ Proprietà:
+\[
+Var[X]=\left< { \left( X-\left< X \right>  \right)  }^{ 2 } \right> \qquad Var\left[ \alpha X \right] ={ \alpha  }^{ 2 }Var\left[ X \right] 
+\]
+\[
+Var\left[ X+\alpha  \right] =Var\left[ X \right] \qquad Var[X]=\left< { X }^{ 2 } \right> -{ \left< X \right>  }^{ 2 }
+\]
+
+\section{Deviazione standard $\sigma$} %Deviazione standard
+\label{sec:deviazione-standard}
+La deviazione standard non è altro che:
+\begin{equation}
+s=\sqrt { { s }^{ 2 } } .
+\end{equation}
+\\ Per una variabile aleatoria vale:
+\begin{equation}
+\sigma =\sqrt { { \sigma  }^{ 2 } } .
+\end{equation}

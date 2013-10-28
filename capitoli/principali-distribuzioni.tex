@@ -1,0 +1,361 @@
+\chapter {Principali distribuzioni} %Principali distribuzioni
+\section{Densità di probabilità per variabili discrete} %Densità di probabilità per variabili discrete
+\label{sec:dens-discrete}
+Data una variabile $X$ \ref{sec:variabile-aleatoria} discreta, la funzione
+\begin{equation}
+p({ x }_{ i })=P\{ X={ x }_{ i }\} =F({ x }_{ k })=\sum _{ i=1 }^{ k }{ p({ x }_{ i }) } 
+\end{equation}
+(in corrispondenza dei valori dello spettro di $X$), è detta densità di probabilità per variabili discrete. \\ \`E normalizzata.
+
+\section{Densità di probabilità per variabili continue} %Densità di probabilità per variabili continue
+\label{sec:dens-continue}
+Data una variabile $X \in \mathbb{R}$ \ref{sec:variabile-aleatoria} continua, la funzione $p(x)\ge 0$ che soddisfa $\forall x$ l'equazione
+\begin{equation}
+F(x)=\int _{ -\infty  }^{ +\infty  }{ p(t)\textrm{ d}t } 
+\end{equation}
+è detta densità di probabilità per variabili continue. \\ \`E normalizzata. \\ Nello spettro continuo la probabilità di trovare uno specifico valore \emph{x} è nulla. \\ Nei punti dove $F(x)$ è derivabile, si ottiene la relazione:
+\begin{equation}
+\label{eq:rel-densità-funz}
+p\left( x \right) =\frac { \textrm{ d}F\left( x \right)  }{ \textrm{ d}x } .
+\end{equation}
+
+\section{Distribuzione binomiale} %Binomiale
+\label{sec:binomiale}
+Espressione della densità binomiale (teorema delle probabilità totali \ref{sec:prob-totali}) :
+\begin{equation}
+P\{ X=x \quad \textrm{successi}\} =b(x;n,p)=\frac { n! }{ x!(n-x)! } { p }^{ x }{ \left( 1-p \right)  }^{ n-x }={n \choose x}{ p }^{ x }{ \left( 1-p \right)  }^{ n-x }.
+\end{equation}
+Questa distribuzione è valida \emph{se e solo se} gli $n$ tentativi sono \emph{indipendenti} \ref{subsec:indipendenti} e la probabilità di successo in un tentativo è sempre \emph{costante} e pari a $p$. \\ La distribuzione binomiale, quando $n=1$, è detta anche di Bernulli.
+
+\`E la legge di una variabile aleatoria $X$ che rappresenta il numero $x$ di successi che si possono ottenere in $n$ tentativi indipendenti, ognuno dei quali ha una probabilità di successo costante.
+\begin{itemize}
+\item[-] \`E normalizzata;
+\item[-] La media è:
+\begin{equation} 
+\mu =\left< X \right> =np\sum _{ x'=0 }^{ n' }{ \frac { n'! }{ x'!(n'-x') } { p }^{ x' }{ \left( 1-p \right)  }^{ n'-x' } } =np;
+\end{equation}
+\item[-] La varianza è:
+\begin{equation}
+{ \sigma  }^{ 2 }=\textrm{Var}\left[ X \right] =np\left[ \left( n-1 \right) p+1 \right] -{ n }^{ 2 }{ p }^{ 2 }=np\left( 1-p \right);
+\end{equation}
+\end{itemize}
+
+\subsection{Distribuzione geometrica} %Distribuzione geometrica
+\label{sec:geometrica}
+La probabilità di avere un successo alla $n$-esima prova è data dalla densità geometrica:
+\begin{equation}
+\label{eq:geometrica}
+g\left( n \right) =p{ \left( 1-p \right)  }^{ n-1 }.
+\end{equation}
+Media:
+\begin{equation}
+\left< n \right> =\frac { 1 }{ p } .
+\end{equation}
+Varianza:
+\begin{equation}
+{ \sigma  }_{ n }^{ 2 }=\frac { 1-p }{ { p }^{ 2 } } .
+\end{equation}
+\'E normalizzata.
+
+\section{Distribuzione di Poisson} %Poisson
+\label{sec:poisson}
+Se $n\gg 1$ e $p\ll 1$, si avranno pochi successi ($x\ll 1$), perciò si può approssimare la distribuzione binomiale \ref{sec:binomiale} a una nuova densità discreta:
+\begin{equation}
+p(x;\mu )=\frac { { \mu  }^{ x } }{ x! } { e }^{ -\mu  }
+\end{equation}
+che rappresenta la probabilità di ottenere un valore $x$ quando la media dei valori è $\mu$. \\ \`E un'approsimazione accettabile della binomiale già a partire da $\mu >10$ e $p<0.1$.
+\begin{itemize}
+\item[-] \`E normalizzata;
+\item[-] La media è:
+\begin{equation} 
+\mu =np;
+\end{equation}
+\item[-] La varianza è:
+\begin{equation}
+{ \sigma  }^{ 2 }=\textrm{Var}\left[ X \right] =\sum _{ x=0 }^{ \infty  }{ \left[ { x }^{ 2 }\frac { { \mu  }^{ x }{ e }^{ -\mu  } }{ x! }  \right]  } -{ \mu  }^{ 2 }={ \mu  }^{ 2 }+\mu -{ \mu  }^{ 2 }=\mu ;
+\end{equation}
+\end{itemize}
+
+\subsection{Processi poissoniani} %Processi poissoniani
+\label{subsec:processi-poisson}
+In questi casi la distribuzione di Poisson va considerata come legge fondamentale della natura. Si consideri quindi un processo stocastico in cui la sorgente genera eventi:
+\begin{itemize}
+\item[a)] discreti;
+\item[b)] con probabilità per unità di tempo $\lambda$ costante e uguale per tutti gli eventi generati;
+\item[c)] indipendenti tra loro (\ref{subsec:indipendenti}).
+\end{itemize}
+Si devono definire le quantità:
+\begin{itemize}
+\item[·] il numero di tentativi: $N=\frac { \Delta t }{ \textrm{d}t } $;
+\item[·] la probabilità di osservare un eventi in un tentativo di durata $\textrm{d}t$: $p=\lambda \textrm{d}t$;
+\item[·] il numero medio di eventi generati entro $\Delta t$: $\mu = \lambda \Delta t$.
+\end{itemize}
+Il conteggio $X(\Delta t)$ in un intervallo $\Delta t$ in un processo di emissione discreto è una variabile aleatoria che segue la legge di Poisson con $\mu = \lambda \Delta t$:
+\begin{equation}
+P\left\{ X\left( \Delta t \right) =n \right\} =\frac { { \left( \lambda \Delta t \right)  }^{ n } }{ n! } { e }^{ -\lambda \Delta t }.
+\end{equation}
+
+Considerando anche il tempo di arrivo $T$ si dimostra la \ref{sec:esponenziale-negativa}. I processi stocastici poissoniani seguono perciò la legge dell'indipendenza stocastica \ref{sec:indipendenza-stocastica}.
+
+\section{Legge esponenziale negativa dei tempi di arrivo} %Legge esponenziale negativa
+\label{sec:esponenziale-negativa}
+Eventi ravvicinati nel tempo sono molto più probabili di eventi separati da lunghi intervalli di attesa. 
+
+La variabile $T$ (tempo di arrivo) ha densità di probabilità di tipo esponenziale negativo
+\begin{equation}
+\label{eq:esponenziale-negativa}
+e\left( t \right) \textrm{d}t={ p }_{ 0 }\left( t \right) \lambda \textrm{d}t=\lambda { e }^{ -\lambda t }\textrm{d}t;
+\end{equation}
+è normalizzata con media $\mu =\frac { 1 }{ \lambda  } $ e varianza ${ \sigma  }^{ 2 }=\frac { 1 }{ { \lambda  }^{ 2 } } $. (L'equivalente nel discreto è la densità geometrica \ref{sec:geometrica}: $g(n)=p(1-p)^{n-1}$). In realtà media e varianza, non essendo con la forma a campana, sono poco rilevanti; più rilevante è la funzione comulativa \ref{sec:comulativa}:
+\begin{equation}
+P\left\{ 0\le T\le t \right\} \equiv F\left( t \right) =\int _{ 0 }^{ t }{ \lambda { e }^{ -\lambda t } } =1-{ e }^{ -\lambda t }.
+\end{equation}
+La probabilità di non essere osservato alcun evento fino a t:
+\begin{equation}
+P\left\{ T>t \right\} =1-F\left( t \right) ={ e }^{ -\lambda t }={ p }_{ 0 }\left( t \right) .
+\end{equation}
+Percentuali che arrivi prima o dopo la media:
+\[
+P\left\{ 0\le T\le \frac { 1 }{ \lambda  }  \right\} =0.63=63\%, \qquad  P\left\{ \frac { 1 }{ \lambda  } \le T \right\} =0.37=37\%.
+\]
+
+La legge esponenziale negativa è l'unica forma funzionale che assicura l'indipendenza temporale degli eventi.
+
+\subsection{Densità di Weibull} %Densità di Weibull
+\label{subsec:weibull}
+Si utilizza per descrivere sistemi biologici o dispositivi dotati di memoria che tendono a invecchiare:
+\begin{equation}
+\label{eq:weibull}
+w\left( t \right) =a{ t }^{ b-1 }{ e }^{ -\frac { a }{ b } { t }^{ b } }
+\end{equation}
+con $t\ge 0$ e $a,b>0$. \\ La funzione comulativa vale $F\left( t \right) =\int _{ 0 }^{ t }{ w\left( t \right) \textrm{d}t } =1-{ e }^{ -\frac { a }{ b } { t }^{ b } }$. \\ La probabilità di non avere eventi fino a $t+\Delta t$ diminuisce se aumenta $t$.
+
+Se $a=b=1$ si ha la legge esponenziale negativa \ref{eq:esponenziale-negativa}. Se $b>1$ tende ad assumere la forma a campana.
+
+\subsection{Densità erlanghiana di ordine k o gamma} %Densità gamma
+\label{subsec:gamma}
+Un caso particolare della legge esponenziale negativa è la densità gamma, che è l'equazione \ref{eq:esponenziale-negativa} con ${ p }_{ 0 }\left( t \right) $ sostituito da ${ p }_{ k-1 }\left( t \right) $:
+\begin{equation}
+{ e }_{ k }\left( t \right) =\frac { { \lambda  }^{ k } }{ \left( k-1 \right) ! } { t }^{ k-1 }{ e }^{ -\lambda t }=\frac { { \lambda  }^{ k } }{ \Gamma \left( k \right)  } { t }^{ k-1 }{ e }^{ -\lambda t }
+\end{equation}
+Media: $\mu =\frac { k }{ \lambda  } $; varianza: ${ \sigma  }^{ 2 }=\frac { k }{ { \lambda  }^{ 2 } } $. \`E la densità della somma di $k$ variabili aleatorie esponenziali negative indipendenti.
+La funzione gamma è:
+\begin{equation}
+\label{eq:funzione-gamma}
+\Gamma \left( p \right) =\int _{ 0 }^{ \infty  }{ { x }^{ p-1 }{ e }^{ -x } \textrm{d}x } 
+\end{equation}
+
+\section{Distribuzione gaussiana o normale} %Gaussiana
+\label{sec:gauss}
+Se $n\gg 1$, $0<p<1$ e $x\gg 1$, si può approssimare la distribuzione binomiale \ref{sec:binomiale} a una nuona densità continua:
+\begin{equation}
+\label{eq:gauss}
+g\left( x;\mu ,\sigma  \right) =\frac { 1 }{ \sqrt { 2\pi \sigma  }  } \textrm{exp}\left[ -\frac { 1 }{ 2 } \frac { { \left( x-\mu  \right)  }^{ 2 } }{ { \sigma  }^{ 2 } }  \right] =\frac { 1 }{ \sqrt { 2\pi \sigma  }  } { e }^{ -\frac { 1 }{ 2 } \frac { { \left( x-\mu  \right)  }^{ 2 } }{ { \sigma  }^{ 2 } }  }
+\end{equation}
+che per $\mu \gg 1$ approssima la binomiale. \\La funzione di Gauss può essere sostituita alla binomiale quando sono valide le condizioni $\mu =np \ge 10$ e $n(1-p) \ge 10$ [valido in pratica\dots]. \\Se $p$ e $1-p$ non sono molto vicine agli estremi dell'intervello $[0,1]$, basta la condizione $\mu \ge 10$.
+\\ La primitiva della gaussiana, secondo la legge $3-\sigma$ \ref{sec:tre-sigma} è:
+\begin{equation}
+E\left( x \right) =\frac { 1 }{ \sqrt { 2\pi \sigma  }  } \int _{ 0 }^{ x }{ { exp }\left[ -\frac { 1 }{ 2 } \frac { { \left( t-\mu  \right)  }^{ 2 } }{ { \sigma  }^{ 2 } }  \right] \textrm{ d}t } 
+\end{equation}
+
+La gaussiana:
+\begin{itemize}
+\item[-] \`E normalizzata;
+\item[-] La media è:
+\begin{equation} 
+\left< X \right> =\frac { 1 }{ \sqrt { 2\pi \sigma  }  } \int _{ -\infty  }^{ +\infty  }{ x  { \textrm{ exp} }\left[ -\frac { 1 }{ 2 } \frac { { \left( x-\mu  \right)  }^{ 2 } }{ { \sigma  }^{ 2 } }  \right] \textrm{d}x } =\mu 
+\end{equation}
+\item[-] La varianza è:
+\begin{equation}
+\textrm{Var}\left[ X \right] =\frac { 1 }{ \sqrt { 2\pi \sigma  }  } \int _{ -\infty  }^{ +\infty  }{ { \left( x-\mu  \right)  }^{ 2 }{ \textrm{exp} }\left[ -\frac { 1 }{ 2 } \frac { { \left( x-\mu  \right)  }^{ 2 } }{ { \sigma  }^{ 2 } }  \right] \textrm{d}x } ={ \sigma  }^{ 2 } ;
+\end{equation}
+\item Essendo la gaussiana simmetrica:
+\begin{equation}
+E(x)=-E(-x).
+\end{equation}
+\end{itemize}
+
+Viene definita la densità gaussiana standard, cioè una gaussiana con media nulla e deviazione standard unitaria:
+\begin{equation}
+\label{eq:gaussiana-standard}
+g\left( x,0,1 \right) =\frac { 1 }{ \sqrt { 2\pi }  } { e }^{ -\frac { { x }^{ 2 } }{ 2 }  }.
+\end{equation}
+
+Viene definita anche la funzione comulativa della gaussiana standard:
+\begin{equation}
+\label{eq:comulativa-gauss}
+\Phi \left( x \right) =\frac { 1 }{ \sqrt { 2\pi }  } \int _{ -\infty  }^{ x }{ e^{ -\frac { { x }^{ 2 } }{ 2 }  }\textrm{ d}x } .
+\end{equation}
+Essa è legata alla versione integrale della gaussiana attraverso la relazione $\Phi(x)=0.5+E(x)$.
+
+\subsection{Densità gaussiana bidimensionale} %Densità gaussiana bidimensionale
+\label{sec:gaussiana-2D}
+La densità gaussiana di due variabili gaussiane indipendenti:
+\begin{equation}
+\label{eq:gauss:2D}
+g\left( x,y \right) ={ g }_{ X }\left( x \right) { g }_{ Y }\left( y \right) =\frac { 1 }{ \sqrt { 2\pi { \sigma  }_{ x }{ \sigma  }_{ x } }  } { \textrm{exp} }\left[ -\frac { 1 }{ 2 } \left( \frac { { \left( x-\mu _{ x } \right)  }^{ 2 } }{ { \sigma  }_{ x }^{ 2 } } +\frac { { \left( x-\mu _{ y } \right)  }^{ 2 } }{ { \sigma  }_{ y }^{ 2 } }  \right)  \right].
+\end{equation}
+
+La gaussiana ridotta è:
+\begin{equation}
+\label{eq:gauss-ridotta-2D}
+g\left( u,v;0,1 \right) =\frac { 1 }{ 2\pi  } { \textrm{exp} }\left[ -\frac { 1 }{ 2 } \left( { u }^{ 2 }+{ v }^{ 2 } \right)  \right]
+\end{equation}
+avendo sostituito $U=\frac { X-\mu _{ x } }{ \sigma _{ x } } $ e $V=\frac { Y-\mu _{ y } }{ \sigma _{ y } } $.
+
+Gode delle proprietà:
+\begin{itemize}
+\item[a)] non essere fattorizzabile in due termini dipendenti rispettivamente solo da $u$ e solo da $v$;
+\item[b)] avere distribuzioni marginali \ref{sec:densità-marginale} gaussiane standard;
+\item[c)] soddisfare l'equazione $\sigma_{xy}=\rho$;
+\item[d)] soddisfare la condizione di normalizzazione.
+\end{itemize}
+La gaussiana ridotta può essere riscritta in termini di correlazione:
+\begin{equation}
+g\left( u,v;0,1 \right) =\frac { 1 }{ 2\pi \sqrt { 1-\rho ^{ 2 } }  } { \textrm{exp} }\left[ -\frac { 1 }{ 2\left( 1-\rho ^{ 2 } \right)  } \left( { u }^{ 2 }-2\rho uv+{ v }^{ 2 } \right)  \right] .
+\end{equation}
+La gaussiana standard è invece:
+\begin{equation}
+\label{eq:gauss-standard-correlazione}
+g\left( u,v;0,1 \right) =\frac { 1 }{ 2\pi \sigma _{ x }\sigma _{ y }\sqrt { 1-\rho ^{ 2 } }  } { e }^{ -\frac { 1 }{ 2 } \gamma \left( x,y \right)  }
+\end{equation}
+con $\gamma \left( x,y \right) =\frac { 1 }{ 1-\rho ^{ 2 } } \left[ \frac { { \left( x-{ \mu  }_{ x } \right)  }^{ 2 } }{ { \sigma  }_{ x }^{ 2 } } -2\rho \frac { \left( x-{ \mu  }_{ x } \right) \left( y-{ \mu  }_{ y } \right)  }{ { \sigma  }_{ x }{ \sigma  }_{ y } } +\frac { { \left( y-{ \mu  }_{ y } \right)  }^{ 2 } }{ { \sigma  }_{ y }^{ 2 } }  \right] $.
+
+La conoscenza delle due distribuzioni marginali, cioè delle proiezioni della gaussiana sui due assi $x$ e $y$, non basta per una conoscenza completa della densità bidimensionale, perché variabili correlate o incorrelate danno in entrambi i casi proiezioni gaussiane. La conoscenza della covarianza o del coefficiente di correlazione è quindi essenziale per la determinazione completa della distribuzione statistica delle variabili.
+
+\`E sempre possibile, operando una rotazione di assi, trasformare una coppia di variabili gaussiane dipendenti in variabili gaussiane indipendenti.
+
+\section{Densità $\chi^2$} %Chi quadro
+\label{sec:chi-quadro}
+Determinazione della densità di probabilità di una variabile aleatoria funzione di più varibili aleatorie. Si vuole trovare la funzione di densità della variabile
+\begin{equation}
+\label{eq:var-chi}
+Q=\sum _{ i=1 }^{ N }{ { X }_{ i }^{ 2 } } 
+\end{equation}
+somma dei quadrati di $n$ variabili standard gaussiano tra loro indipendenti.
+
+Con $F_{Q}(q)$ si indica la comulativa \ref{sec:comulativa} della funzione densità $\chi ^2$ [essa da la probabilità che la variabile Q (\ref{eq:var-chi}) sia compresa entro un'ipersfera di raggio $\sqrt { q } $]:
+\begin{equation}
+P\left\{ \sum { { X }_{ i }^{ 2 } } \le q \right\} \equiv { F }_{ Q }\left( q \right) =\int _{ \sum { { x }_{ i }^{ 2 }\le q }  } \dots \int { { \left( \frac { 1 }{ \sqrt { 2\pi  }  }  \right)  }^{ n }{ e }^{ -\sum { \frac { { x }_{ i }^{ 2 } }{ 2 }  }  } \textrm{d}{ x }_{ 1 }\dots \textrm{d}x_{ n } } 
+\end{equation}
+La densità $\chi ^2$ è:
+\begin{equation}
+{ p }_{ n }\left( q \right) \textrm{d}q=\frac { 1 }{ { 2 }^{ \frac { n }{ 2 }  }\Gamma \left( \frac { n }{ 2 }  \right)  } { e }^{ -\frac { 1 }{ 2 } q }{ q }^{ \frac { 1 }{ 2 } \left( n-2 \right)  } \textrm{d}q
+\end{equation}
+con $\Gamma (p)$ la funzione gamma \ref{eq:funzione-gamma}
+e individua la distribuzione statistica del modulo quadro di un vettore di $n$ componenti gaussiane indipendenti.
+
+Se si opera la sostituzione $n\rightarrow \nu $ (con $\nu$ gradi di libertà) e si intende $\chi^2$ sia la distribuzione di densità ${ p }_{ n }\left( q \right) \textrm{d}q$ sia i valori numerici di $Q$ (sostituendo quindi $q\rightarrow { \chi  }^{ 2 }$) ottenuti in prove specifiche, si ha: $Q\left( \nu  \right) \rightarrow { \chi  }^{ 2 }\left( \nu  \right) $ che assume valori $\chi^2$. La densità diventa quindi:
+\begin{equation}
+\label{eq:chi-quadro}
+{ p }_{ \nu  }\left( { \chi  }^{ 2 } \right) \textrm{d}{ \chi  }^{ 2 }\equiv p\left( { \chi  }^{ 2 };\nu  \right) \textrm{d}{ \chi  }^{ 2 }=\frac { 1 }{ { 2 }^{ \frac { \nu  }{ 2 }  }\Gamma \left( \frac { \nu  }{ 2 }  \right)  } { e }^{ -\frac { { \chi  }^{ 2 } }{ 2 }  }{ \left( { \chi  }^{ 2 } \right)  }^{ \frac { \nu  }{ 2 } -1 } \textrm{d}{ \chi  }.
+\end{equation}
+La media è:
+\begin{equation}
+\left< Q \right> =\frac { 1 }{ { 2 }^{ \frac { \nu  }{ 2 }  }\Gamma \left( \frac { \nu  }{ 2 }  \right)  } \int _{ 0 }^{ \infty  }{ { x\left( x \right)  }^{ \frac { \nu  }{ 2 } -1 }{ e }^{ -\frac { x }{ 2 }  } \textrm{d}x } =\nu .
+\end{equation}
+La varianza è:
+\begin{equation}
+\textrm{Var}\left[ Q \right] =\frac { 1 }{ { 2 }^{ \frac { \nu  }{ 2 }  }\Gamma \left( \frac { \nu  }{ 2 }  \right)  } \int _{ 0 }^{ \infty  }{ { { \left( x-\nu  \right)  }^{ 2 }\left( x \right)  }^{ \frac { \nu  }{ 2 } -1 }{ e }^{ -\frac { x }{ 2 }  } \textrm{d}x } =2\nu .
+\end{equation}
+Si usa spesso la distribuzione $\chi^2$ ridotto:
+\begin{equation}
+\label{eq:chi-ridotto}
+{ Q }_{ R }\left( \nu  \right) =\frac { Q\left( \nu  \right)  }{ \nu  } 
+\end{equation}
+con media $\left< { Q }_{ R }\left( \nu  \right)  \right> =1$ e varianza $\textrm{Var}\left[ { Q }_{ R }\left( \nu  \right)  \right] =\frac { 2 }{ \nu  } $.
+La versione del $\chi^2$ ridotto è:
+\begin{equation}
+\label{eq:chi-ridotto-int}
+P\left\{ { Q }_{ R }\left( \nu  \right) \ge { \chi  }_{ R }^{ 2 }\left( \nu  \right)  \right\} =\int _{ { \chi  }_{ R }^{ 2 }\left( \nu  \right)  }^{ \infty  }{ \frac { { \nu  }^{ \frac { \nu  }{ 2 }  } }{ { 2 }^{ \frac { \nu  }{ 2 }  }\Gamma \left( \frac { \nu  }{ 2 }  \right)  } { x }^{ \frac { \nu  }{ 2 } -1 }{ e }^{ -\frac { \nu x }{ 2 }  }\textrm{ d}x } .
+\end{equation}
+
+\subsection{Distribuzione di Maxwell} %Distribuzione di Maxwell
+\label{sec:maxwell}
+La densità di Maxwell è la generalizzazioni in tre dimensioni della densità $\chi^2$ \ref{sec:chi-quadro}. La sua equazione è:
+\begin{equation}
+\label{eq:maxwell}
+m\left( r \right) \textrm{d}r=\sqrt { \frac { 2 }{ \pi  }  } \frac { 1 }{ { \sigma  }^{ 3 } } { r }^{ 2 }{ e }^{ -\frac { { r }^{ 2 } }{ 2{ \sigma  }^{ 2 } }  }\textrm{d}r
+\end{equation}
+Media:
+\begin{equation}
+\left< { R }^{ 2 } \right> =3{ \sigma  }^{ 2 }.
+\end{equation}
+Varianza:
+\begin{equation}
+\textrm{Var}\left[ { R }^{ 2 } \right] =6{ \sigma  }^{ 4 }.
+\end{equation}
+
+\subsection{Distribuzione Snedecor} %Distribuzione Snedecor
+\label{sec:snedecor}
+Avendo definito la variabile di Snedecor F come $\textrm{F}=\frac { { Q }_{ R }\left( \mu  \right)  }{ { Q }_{ R }\left( \nu  \right)  } $, si definisce la densità di Snedecor come rapporto tra due variabili indipendenti $\chi^2$ ridotto:
+\begin{equation}
+\label{eq:snedecor}
+{ p }_{ \mu \nu  }\left( F \right) ={ c }_{ \mu \nu  }{ D }^{ \frac { 1 }{ 2 } \left( \mu -2 \right)  }{ \left( \mu F+\nu  \right)  }^{ -\frac { 1 }{ 2 } \left( \mu +\nu  \right)  }
+\end{equation}
+con ${ c }_{ \mu \nu  }={ \mu  }^{ \frac { \mu  }{ 2 }  }{ \nu  }^{ \frac { \nu  }{ 2 }  }\frac { \Gamma \left( \frac { \mu +\nu  }{ 2 }  \right)  }{ \Gamma \left( \frac { \mu  }{ 2 }  \right) \Gamma \left( \frac { \nu  }{ 2 }  \right)  } $.
+
+\section{Densità $t$ di Student} %Densità di Student
+\label{sec:student}
+Per variabili formate dal rapporto di una variabile gaussiana standard e la radice di una variabile $Q_R$ di densità $\chi^2$ ridotto con $\nu$ gradi di libertà viene introdotta la densità di Student.
+\\ Avendo posto $Z=\frac{X}{\sqrt{\frac{Y}{\nu}}}=\sqrt{\nu}\frac{X}{\sqrt{Y}}$ si ottiene:
+\begin{equation}
+p_{ Z }\left( z \right) =\frac { \Gamma \left( \frac { \nu +1 }{ 2 }  \right)  }{ \Gamma \left( \frac { \nu  }{ 2 }  \right) \sqrt { \pi  }  } \frac { 1 }{ \sqrt { \nu  }  } { \left( \frac { { z }^{ 2 } }{ \nu  } +1 \right)  }^{ -\frac { \nu +1 }{ 2 }  }.
+\end{equation}
+Viene riscritta nella variabile $t$, ponendo $\sqrt{\pi}=\Gamma(\frac{1}{2})$: 
+\begin{equation}
+\label{eq:student}
+s_{ \nu  }\left( t \right) =\frac { \Gamma \left( \frac { \nu +1 }{ 2 }  \right)  }{ \Gamma \left( \frac { \nu  }{ 2 }  \right) \Gamma \left( \frac { 1 }{ 2 }  \right)  } \frac { 1 }{ \sqrt { \nu  }  } { \left( \frac { t^{ 2 } }{ \nu  } +1 \right)  }^{ -\frac { \nu +1 }{ 2 }  }.
+\end{equation}
+
+\section{Densità uniforme} %Densità uniforme
+\label{sec:uniforme}
+Una variabile aleatoria $X$ \ref{sec:variabile-aleatoria} continua, che assume valori nell'intervallo finito $[a,b]$, si dice uniforme in $[a,b]$ e si denota con $X\sim U(a,b)$ quando ha una densità di probabilità costante data da:
+\begin{equation}
+\label{eq:uniforme}
+u(x)=
+\begin{cases}
+\frac { 1 }{ b-a } & \textrm{per } a\le x\le b\\ 0 & \textrm{per } x<a \textrm{, } x>b
+\end{cases}.
+\end{equation}
+\`E normalizzata, con media $\mu =\frac { 1 }{ b-a } \int _{ a }^{ b }{ x \textrm{ d}x= } \frac { b+a }{ 2 } $ e varianza ${ \sigma  }^{ 2 }=\frac { 1 }{ b-a } \int _{ a }^{ b }{ { \left( x-\frac { b+a }{ 2 }  \right)  }^{ 2 } \textrm{d}x=\frac { { \left( b-a \right)  }^{ 2 } }{ 12 }  } $.
+
+Per una variabile aleatoria $a\le X\le b$, avente densità uniforme, la probabilità di localizzazione in $\left( { x }_{ 1 },{ x }_{ 2 } \right) $ è proporzionale all'ampiezza dell'intervallo \[P\left\{ { x }_{ 1 }\le X\le { x }_{ 2 } \right\} =\frac { 1 }{ b-a } \int _{ { x }_{ 1 } }^{ { x }_{ 2 } }{ dx= } \frac { { x }_{ 2 }-{ x }_{ 1 } }{ b-a }; \] viceversa, se una variabile aleatoria continua soddisfa a $P\left\{ { x }_{ 1 }\le X\le { x }_{ 2 } \right\} =\frac { 1 }{ b-a } \int _{ { x }_{ 1 } }^{ { x }_{ 2 } }{ dx= } \frac { { x }_{ 2 }-{ x }_{ 1 } }{ b-a } $, essa è distribuita in modo uniforme.
+
+\subsection{Distribuzione triangolare} %Distribuzione triangolare
+\label{subsec:triangolare}
+Una particolare densità uniforme è quella triangolare:
+\begin{equation}
+p_Z(z)=
+\begin{cases}
+z & \textrm{per } 0\le z\le 1 \\ 2-z & \textrm{per } 1 < z \le 2\\ 0 & \textrm{altrimenti}
+\end{cases}.
+\end{equation}
+\'E normalizzata, compresa tra 0 e 2, di forma triangolare e con massimo in $z=1$.
+
+\section{Distribuzione di Boltzmann} %Distribuzione di Boltzmann
+\label{sec:boltzmann}
+La densità di Boltzmann è:
+\begin{equation}
+\label{eq:boltzmann}
+m\left( E \right) dE=\frac { 2 }{ \sqrt { \pi  }  } \frac { 1 }{ KT } \sqrt { \frac { E }{ KT }  } { e }^{ -\frac { E }{ KT }  }dE,
+\end{equation}
+avendo posto $m{ \sigma  }^{ 2 }=KT$ e quindi $\sigma =\sqrt { \frac { KT }{ m }  } $.
+
+\section{Riassunto} %Riassunto densità
+\label{sec:riassunto-densità}
+
+\begin{tabularx}{\textwidth}{llXXX}
+\toprule
+Nome & Densità & Media & Deviazione standard & Commenti \\
+\midrule
+binomiale & $\frac { n! }{ x!(n-x)! } { p }^{ x }{ \left( 1-p \right)  }^{ n-x }$ & $np$ & $\sqrt { np\left( 1-p \right)  } $ & successi in prove indipendenti con probabilità costante \\
+poissoniana & $\frac { { \mu  }^{ x } }{ x! } { e }^{ -\mu  }$ & $\mu$ & $\sqrt { \mu  } $ & conteggi \\
+gaussiana & $\frac { 1 }{ \sqrt { 2\pi \sigma  }  } { e }^{ -\frac { 1 }{ 2 } \frac { { \left( x-\mu  \right)  }^{ 2 } }{ { \sigma  }^{ 2 } }  }$ & $\mu$ & $\sigma$ & combinazione lineare di variabili indipendenti \\
+esponenziale & $\lambda { e }^{ -\lambda t }$ & $\frac { 1 }{ \lambda  } $ & $\frac { 1 }{ \lambda  } $ & tempi tra variabili poissoniane \\
+gamma & $\frac { { \lambda  }^{ k } }{ \Gamma \left( k \right)  } { t }^{ k-1 }{ e }^{ -\lambda t }$ & $\frac { k }{ \lambda  } $ & $\frac { \sqrt { k }  }{ \lambda  } $ & somma di $k$ variabili esponenziali negative \\
+$\chi^2$ & $\frac { 1 }{ { 2 }^{ \frac { \nu  }{ 2 }  }\Gamma \left( \frac { \nu  }{ 2 }  \right)  } { e }^{ -\frac { { \chi  }^{ 2 } }{ 2 }  }{ \left( { \chi  }^{ 2 } \right)  }^{ \frac { \nu  }{ 2 } -1 }{ d }{ \chi  }$ & $\nu$ & $\sqrt { 2\nu  } $ & modulo di un vettore gaussiano \\
+uniforme & $\frac { 1 }{ \Delta  } \qquad \left( 0\le x\le \Delta  \right) $ & $\frac { \Delta }{ 2 } $ & $\frac { \Delta  }{ \sqrt { 12 }  } $ & variabili comulative \\
+student & $\frac { \Gamma \left( \frac { \nu +1 }{ 2 }  \right)  }{ \Gamma \left( \frac { \nu  }{ 2 }  \right) \Gamma \left( \frac { 1 }{ 2 }  \right)  } \frac { 1 }{ \sqrt { \nu  }  } { \left( \frac { t^{ 2 } }{ \nu  } +1 \right)  }^{ -\frac { \nu +1 }{ 2 }  }$ & $0$ & $\sqrt { \frac { \nu  }{ \nu -2 }  } $ & per variabili formate dal rapporto di una variabile gaussiana standard e la radice di una variabile $Q_R$ di densità $\chi^2$ ridotto\\
+\bottomrule
+\end{tabularx}

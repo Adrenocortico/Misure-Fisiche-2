@@ -1,0 +1,263 @@
+\chapter{Concetti fondamentali} %Concetti fondamentali
+\section{Variabile aleatoria} %Variabile aleatoria
+\label{sec:variabile-aleatoria}
+\emph{Una variabile statistica, aleatoria o casuale è il risultato dell'interazione di molti fattori, ognuno dei quali non è preponderante sugli altri. Questi fattori (e le loro leggi dinamiche) non possono essere completamente individuati, fissati e comunque tenuti sotto controllo, nemmeno in linea di principio. \\ Una variabile aleatoria X(a) è una funzione avente come dominio lo spazio S, come codominio la retta reale e tale che l'insieme degli elementi a per i quali vale la relazione $X(a)\le x$ è un evento per $\forall x \in \mathbb{R}.$ \\ Deve essere sempre definita su tutti gli elementi dello spazio campionario S. \\ Su uno stesso spazio di probabilità si possono definire più variabili aleatorie.}
+
+\subsection{Variabili aleatorie indipendenti} %Variabili aleatorie indipendenti
+\label{subsec:var-indipendenti}
+\emph{Se le variabili aleatorie $X_{i}$ sono definite sullo stesso spazio di probabilità e gli eventi $\{ { X }_{ i }\in { A }_{ i }\} $ sono indipendenti secondo la definizione \ref{subsec:kolmogorov}, per ogni scelta possibile degli intervalli $A_{i} \in \mathbb{R}_{x}$ da \ref{subsec:indipendenti} si ha:
+\[
+P\{ { X }_{ 1 }\in { A }_{ 1 },\dots { X }_{ n }\in { A }_{ n }\} =\prod _{ i }{ P\{ { X }_{ i }\in { A }_{ i }\}  .} 
+\]}
+
+\section{Spazio campionario o dei casi} %Spazio campionario
+\label{sec:spazio-campionario}
+\emph{Insieme di tutti i possibili valori diversi (casi) che può assumere una variabile aleatoria.}
+
+\section{Evento} %Evento
+\label{sec:evento}
+\emph{Particolare combinazione o particolare sottoinsieme di casi. $\{ a: X(a)\in { \mathbb{R} }_{ 0 }\}. $}
+\subsection{Eventi indipendenti} %Indipendenti
+\label{subsec:indipendenti}
+\emph{Se $P(\bigcap _{ i\in J }{ { A }_{ i } } )=\prod _{ i\in J }{ P({ A }_{ i }) } $}
+\subsection{Eventi incompatibili} %Incompatibili
+\label{subsec:incompatibili}
+\emph{Due eventi sono incompatibili o disgiunti se quando si realizza A non si realizza B e viceversa: $A\cap B=\emptyset$}
+
+\section{Spettro} %Spettro
+\label{sec:spettro}
+\emph{Insieme di tutti gli elementi diversi del sottoinsieme di casi che definisce l'evento. Codominio reale della variabile aleatoria \ref{sec:variabile-aleatoria}. \\ Se il codominio è un insieme numerabile, diremo che lo spettro è discreto; \\ quando i valori possibili sono su tutto $\mathbb{R}$, o su unioni di interevalli di $\mathbb{R}$, diremo che lo spettro è continuo.}
+
+\section{Prova} %Prova
+\label{sec:prova}
+\emph{Insieme delle operazioni che realizzano l'evento.}
+
+\section{Misura, esperimento o campionamento} %Misura
+\label{sece:misura}
+\emph{Insieme di prove.}
+
+\section{Campione} %Campione
+\label{sec:campione}
+\emph{Risultato di un esperimento.}
+
+\section{Popolazione} %Popolazione
+\label{sec:popolazione}
+\emph{Risultato del numero di prove, finito o infinito, tale da esaurire tutti gli eventi possibili.}
+
+\section{$\sigma$-algebra} %Sigma-algebra
+\label{sec:sigma-algebra}
+\emph{Ogni famiglia $\mathcal{F}$ di sottoinsiemi di S aventi le proprietà:
+\begin{itemize}
+\item[a)] l'insieme vuoto appartiene ad $\mathcal{F}: \emptyset \in \mathcal{F}$;
+\item[b)] se una infinità di insiemi $A_1 , A_2 , \dots \in \mathcal{F}$, allora $\bigcup_{i=1}^\infty A_i \in \mathcal{F}$;
+\item[c)] se $A \in \mathcal{F}$, lo stesso vale per l'insieme complementare: $\bar{A} \in \mathcal{F}$.
+\end{itemize}}
+
+\section{Spazio di probabilità} %Spazio di probabilità
+\label{sec:spazio-probabilità}
+\emph{Terna $\varepsilon \equiv (S,\mathcal{F},P)$ formata dallo spazio campionario, da una $\sigma$-algebra $\mathcal{F}$ e da P.}
+
+\section{Quantile} %Quantile
+\label{sec:quantile}
+\emph{Si chiama quantile di ordine $\alpha$ il più piccolo valore $x_{\alpha}$ che verifica la disuguaglianza $P\{ X\le { x }_{ \alpha  }\} =F({ x }_{ \alpha  })\ge \alpha $.}
+
+\section{Valore atteso} %Valore atteso
+\label{sec:val-atteso}
+\emph{Se f(X) è una funzione di una variabile aleatoria X avente densità di probabilità p(x) (\ref{sec:dens-discrete}, \ref{sec:dens-continue}), si definisce come: $\left< f(X) \right> \equiv E\left[ f(X) \right] =\sum _{ k }{ f({ x }_{ k })p({ x }_{ k }) } \rightarrow \int { f(x)p(x)\textrm{d}x } $.}
+
+\section{Campione casuale} %Campione casuale
+\label{sec:camp-casual}
+\emph{Insieme delle N variabili $X_i$ indipendenti ed aventi densità di probabilità p(x) (\ref{sec:dens-discrete}, \ref{sec:dens-continue}).}
+
+\section{Statistica} %Statistica
+\label{sec:statistica}
+\emph{Dato un campione \ref{sec:camp-casual} di densità p(x) (\ref{sec:dens-discrete}, \ref{sec:dens-continue}), una funzione
+\begin{equation}
+T=t({ X }_{ 1 },\dots { X }_{ N })
+\end{equation}
+che non contiene alcun parametro incognito, è una variabile aleatoria \ref{sec:variabile-aleatoria} che prende il nome di statistica.}
+
+\section{Probabilità} %Probabilità
+\label{sec:probabilità}
+Valutazione quantitativa della possibilità di ottenere un determinato evento. Viene fatta o su base dell'esperienza, utilizzando modelli matematici, o su base puramente soggettiva. \\ Segue in \ref{cha:criteri-convergenza}.
+\subsection{Probabilità soggettiva} %Soggettiva
+\label{prob:soggettiva}
+\emph{Grado di convinzione (degree of belief) soffettivo circa il verificarsi di un evento.}
+
+\subsection{Probabilità a priori} %A priori
+\label{subsec:priori}
+\emph{Se N è il numero totale di casi dello spazio campionario di una variabile aleatoria ed n il numero di casi favorevoli per i quali si realizza l'evento A, la probabilità a priori di A è data da
+\begin{equation}
+P(A)=\frac{n}{N} .
+\end{equation}}
+
+\subsection{Probabilità frequentista} %Frequentista
+\label{subsec:frequentista}
+\emph{Se m è il numero di prove in cui si è verificato l'evento A su un totale di M prove, la probabilità di A è data da
+\begin{equation}
+P(A)=\lim_{M\to +\infty}\frac{m}{M}.
+\end{equation}}
+
+\subsection{Probabilità di Kolmogorov o assiomatica} %Kolmogorov
+\label{subsec:kolmogorov}
+\emph{Una funzione P(A) che soddisfa a $P:\mathcal{F} \longrightarrow [0,1]$ ed alle proprietà: $P(A)\ge 0;$ $P(S)=0$ \\ per ogni famiglia finita o numerabile $A_1 , A_2 , \dots$ di insiemi di $\mathcal{F}$, tra loro mutualmente disgiunti:
+\begin{equation}
+\label{eq:prob-kolmo}
+P\left( \bigcup _{ i=1 }^{ \infty  }{ A_{ i } }  \right) =\sum _{ i=1 }^{ \infty  }{ P\left( A_{ i } \right)  } 
+\end{equation}}
+
+\subsection{Probabilità composta} %Composta
+\label{subsec:composta}
+\emph{Si definisce $P(A\cup B)$ oppure $P(AB)$ la probabilità che si verifichino contemporaneamente gli eventi A e B.}
+
+\subsection{Probabilità condizionata} %Condizionata
+\label{subsec:condizionata}
+\emph{Si definisce $P(B|A)$ la probabilità che si verifichi l'evento B essendosi verificato l'evento A. Essa è espressa come:
+\begin{equation}
+P(B|A)=\frac{P(A\cap B)}{P(A)} \qquad se \quad P(A)>0.
+\end{equation}}
+
+\subsection{Legge ipergeometrica} %Legge ipergeometrica
+\label{subsec:ipergeometrica}
+\emph{Permette di calcolare la probabilità che da un'urna contenente $a$ biglie di tipo $A$ e $b$ biglie di tipo $B$ si estraggano $k$ biglie di tipo $A$ avendone estratte $n\le a+b$ senza reintroduzione nell'urna. Assumendo che tutte le biglie abbiano la stessa probabilità di essere estratte e che le estrazioni siano indipendenti si ha:
+\begin{equation}
+P\left\{ k;a,b,n \right\} =\frac { { a \choose k  }{ b \choose {n-k} } }{ { {a+b} \choose n } } .
+\end{equation}}
+
+
+\section{Calcolo combinatorio} %Calcolo combinatorio
+\label{sec:calc-combinatorio}
+\subsection{Permutazioni}
+\begin{equation}
+{ P }_{ n }=n!
+\end{equation}
+\subsection{Permutazioni con ripetizione}
+\begin{equation}
+{ P }_{ { k }_{ 1 }\dots { k }_{ r } }^{ * }=\frac { n! }{ \prod _{ j=1 }^{ r }{ ({ k }_{ j }!) }  } 
+\end{equation}
+\subsection{Disposizioni}
+\begin{equation}
+{ D }_{ n,k }=\frac { n! }{ (n-k)! } 
+\end{equation}
+\subsection{Disposizioni con ripetizione}
+\begin{equation}
+{ D }_{ n,k }^{ * }=n^{k}
+\end{equation}
+\subsection{Combinazioni}
+\begin{equation}
+{ C }_{ n,k }=\frac { { D }_{ n,k } }{ { P }_{ k } } =\frac { n! }{ k!(n-k)! } = {n \choose k}
+\end{equation}
+\subsection{Combinazioni con ripetizioni}
+\begin{equation}
+{ C }_{ n,k }^{ * }={n+k-1 \choose n-1} 
+\end{equation}
+
+\section{Variabile standard} %Variabile standard
+\label{sec:var-standard}
+\emph{Variabile fondamentale in statistica che misura lo scarto di un valore $x$ dalla sua media in unità di deviazione standard:
+\begin{equation}
+T=\frac { X-\mu  }{ \sigma  } \textrm{ \emph{che assume i valori} } t=\frac { x-\mu  }{ \sigma  } .
+\end{equation}
+Ha media nulla e varianza unitaria.}
+
+\section{Ellisse di concentrazione} %Ellisse di concentrazione
+\label{sec:ellisse-concentrazione}
+\emph{Se si immagina di tagliare la curva gaussiana bidimensionale con piani di quota costante, l'intersezione dà luogo ad una curva di equazione per variabili standard:
+\begin{equation}
+{ u }^{ 2 }+-2\rho uv+{ v }^{ 2 }=\textrm{costante}
+\end{equation}
+e per variabili normali:
+\begin{equation}
+\frac { { \left( x-{ \mu }_{ x } \right)  }^{ 2 } }{ { \sigma }_{ x }^{ 2 } } -2\rho\frac { \left( x-{ \mu }_{ x } \right) \left( y-{ \mu }_{ y } \right)  }{ { \sigma }_{ x }{ \sigma }_{ y } } +\frac { { \left( y-{ \mu }_{ y } \right)  }^{ 2 } }{ { \sigma }_{ y }^{ 2 } } =\textrm{costante}.
+\end{equation}
+Queste curve in generale rappresentano delle ellissi con centro nel punto $(\mu_x, \mu_y)$. 
+\begin{itemize}
+\item[-] se $\rho=0$, l'ellisse ha gli assi principali paralleli agli assi di riferimento;
+\item[-] se $\sigma_x=\sigma_y$, l'ellisse degenera in una circonferenza;
+\item[-] se $\rho=\pm 1$, le variabili sono completamente correlate e l'ellisse degenera in una retta di equazione $\frac { { \left( x-{ \mu  }_{ x } \right)  } }{ { \sigma  }_{ x } } \pm \frac { { \left( y-{ \mu  }_{ y } \right)  } }{ { \sigma  }_{ y } } =\textrm{ costante }$.
+\end{itemize}}
+
+\section{Momento} %Momento
+\label{sec:momento}
+\begin{equation}
+\label{eq:momento}
+{ \Delta  }_{ n }=\sum _{ k=1 }^{ \infty  }{ { p }_{ k }{ \left( { x }_{ k }-\mu  \right)  }^{ n } } \rightarrow \int _{ - }^{ + }{ { \left( x-\mu  \right)  }^{ n }p\left( x \right) \textrm{d}x } .
+\end{equation}
+
+\section{Intervallo di confidenza} %Intervallo di confidenza
+\label{sec:intervallo-confidenza}
+\emph{Se il valore vero del parametro incognito è $\theta$ ad esso corrisponde sull'asse dei valori misurati l'intervallo $[x_1,x_2]$ e, per costruzione, si ha $P\{x_1\ge X\ge x_2\}=CL$. Dato che quando $x=x_1$ sull'asse dei parametri $\theta=\theta_2$ e quando $x=x_2$ sull'asse dei parametri $\theta=\theta_1$, per costruzione $x\in[x_1.x_2]$ se e solo se $\theta \in [\theta_1,\theta_2]$. Vale allora la relazione fondamentale:
+\begin{equation}
+P\left\{ x_{ 1 }\le X\le x_{ 2 } \right\} =P\left\{ \Theta _{ 1 }\le \theta \le \Theta _{ 2 } \right\} =CL.
+\end{equation}
+Date due statistiche $\Theta _{ 1 }$ e $\Theta _{ 2 }$ con $\Theta _{ 1 }$ e $\Theta _{ 2 }$ variabili continue e $\Theta _{ 1 }\le \Theta _{ 2 }$ con probabilità 1, si dice che $I=\left[ \Theta _{ 1 },\Theta _{ 2 } \right] $ è un intervallo di confidenza per un parametro $\theta$, di livello di confidenza $0<CL<1$, se, $\forall \theta$ appartenente allo spazio dei parametri, la probabilità che $I$ contenga $\theta$ vale $CL$:
+\begin{equation}
+\label{eq:intervallo-confidenza}
+P\left\{ \Theta _{ 1 }\le \theta \le \Theta _{ 2 } \right\} =CL.
+\end{equation}
+Se $\Theta _{ 1 }$ e $\Theta _{ 2 }$ sono variabili discrete, l'intervallo di confidenza è l'intervallo più piccolo che soddisfa la relazione:
+\begin{equation}
+P\left\{ \Theta _{ 1 }\le \theta \le \Theta _{ 2 } \right\} \ge CL.
+\end{equation}
+Nell'intervallo di confidenza \ref{eq:intervallo-confidenza} gli estremi sono variabili aleatorie, mentre il parametro $\theta$ è fissato; di conseguenza il livello di confidenza va sempre riferito all'intervallo $I=\left[ \Theta _{ 1 },\Theta _{ 2 } \right] $ ed indica la frazione di esperimenti che individuano correttamente il valore vero, in un insieme infinito di esperimenti ripetuti, ognuno dei quali trova un intervallo di confidenza diverso. \\ Ogni particolare intervallo $[\theta_1,\theta_2]$ viene ricavato con un metodo che dà il risultato corretto in una frazione $CL$ degli esperimenti. \\ In statistica è lecito chiamare intervallo di confidenza sia l'intervallo aleatorio $I=\left[ \Theta _{ 1 },\Theta _{ 2 } \right] $ sia le sue realizzazioni numeriche $[\theta_1,\theta_2]$.}
+
+\section{Livello di confidenza} %Livello di confidenza
+\label{sec:livello-confidenza}
+\emph{La probabilità che un intervallo ha di contenere la vera probabilità $p$ di osservare un evento si chiama livello di confidenza. Si indica con $CL\equiv (1-\alpha)$, con $\alpha$ chiamato livello di significatività. Questo intervallo deve avere contemporaneamente un livello di confidenza elevato e un'ampiezza ridotta perché sia utile.}
+
+\section{Quantità pivotali} %Quantità pivotali
+\label{sec:quantità-pivotali}
+\emph{Variabili aleatorie la cui distribuzione non dipende dal parametro che si vuole stimare. \\ Se $Q(X,\theta)$ è una quantità pivotale, la probabilità $P{Q\in A}$ non dipende da $\theta$, $\forall A \in \mathbb{R}$.}
+
+\section{Stimatore distorto} %Stimatore distorto
+\label{sec:stimatore-distorto}
+\emph{Uno stimatore si dice distorto quando la media degli stimatori $T_N$, calcolati da un campione di dimensione $N$, differisce dal limite per $N\rightarrow \infty$ dallo stimatore.}
+
+\section{Gradi di libertà di una statistica} %Gradi di libertà di una statistica
+\label{sec:gradi-libertà}
+\emph{Il numero dei gradi di libertà $\nu$ di una statistica $T=t\left( { X }_{ 1 },\dots ,{ X }_{ N },\hat { \theta  }  \right) $ dipendente da un insieme noto di parametri $\hat { \theta  } $, è dato dal numero $N$ di variabili del campione meno il numero $k$ di parametri $\hat { \theta  } $ stimati dai dati:
+\begin{equation}
+\nu=N-k.
+\end{equation}}
+
+\section{Scienza esatta} %Scienza esatta
+\label{sec:scienza-esatta}
+\emph{Una scienza si dice esatta quando è sempre in grado di associare un errore alle proprie previsioni e risultati.}
+
+\section{Grandezze fisiche costanti e variabili} %Grandezze fisiche costanti e variabili
+\label{sec:grandezze-costanti-variabili}
+\emph{\begin{itemize}
+\item Una grandezza è costante se durante l'esperimento si osservano fluttuazioni (risultati diversi ad ogni prova, pur mantenendo costanti le condizioni sperimentali), esse sono da attribuire alle operazioni di misura oppure al funzionamento degli strumenti impiegati. Essa è una costante fisica universale, cioè è una grandezza che ha lo stesso valore in tutti i sistemi di riferimento, oppure una grandezza che ragionevolmente si può considerare costante e stabile rispetto alle operazioni della misura che si sta effettuando.
+\item Una grandezza è una variabile aleatoria se le fluttuazioni osservate conterranno anche quelle dell'oggetto in misura. Questa componente delle fluttuazioni contiene informazioni fisiche sulla legge statistica della grandezza che si sta misurando. Essa presenta delle fluttuazioni e variazioni misurabili che sono intrinseghe al processo fisico che si sta studiando. Molto spesso le fluttuazioni sono puramente statistiche, ed allora la grandezza è una variabile aleatoria che possiede una certa distribuzione. Scopo della misura è proprio la determinazione di questa distribuzione.
+\end{itemize}}
+
+\section{Sensibilità o risoluzione di uno strumento} %Sensibilità o risoluzione di uno strumento
+\label{sec:sensibilità-strumento}
+\emph{Se uno strumento fornisce il valore x nella misura di una grandezza, si definisce come intervallo di sensibilità o risoluzione e si indica con $\Delta x$, la minima quantità necessaria per spostare il risultato della misura del valore x ad uno contiguo. Si dice sensibilità dello strumento il rapporto:
+\begin{equation}
+S=\frac { 1 }{ \Delta x } .
+\end{equation}
+Se x è il valore letto e $\Delta x$ è l'intervallo di sensibilità, il valore vero sarà compreso con legge di probabilità uniforme, nell'intervallo $x\pm \frac{\Delta x}{2}$, con un $CL=100\%$:
+\begin{equation}
+\textrm{valore vero}=x\pm \frac{\Delta x}{2}.
+\end{equation}}
+
+\section{Errore statistico} %Errore statistico
+\label{sec:errore-statistico}
+\emph{\'E quel tipo di errore, dovuto alle operazioni di misura, che fa variare i risultati secondo una certa distribuione statistica. La media di questa distribuzione (media vera) coincide col valore vero della grandezza fisica che si misura. La deviazione standard della distribuzione è l'errore di misura. Queste due grandezze sono stimate dalla media e dalla deviazione standard del campione sperimentale delle misure.}
+
+\section{Precisione} %Precisione
+\label{sec:precisione}
+\emph{La precisione è determinata dall'errore statistico della misura, che è dato dalla deviazione standard stimata dal campione delle misure effettuate. Una misura è tanto più precisa quanto più è piccolo l'errore statistico.}
+
+\section{Errore sistematico} % Errore sistematico
+\label{sec:errore-sistematico}
+\emph{\'E quel tipo di errore che fa scostare la media dei valori misurati dal valore vero, indipendentemente dal numero di misure che si effettuano. In altre parole, gli errori sistematici provocano uno scostamento tra la media della distribuzione delle misure e il valore vero della grandezza. Sono dovuti ad operazioni errate oppure ad ipotesi sbagliate sul modello fisico su cui si basa la misura. Negli strumenti scientifici l'errore sistematico viene indicato con: $\delta +\Delta \simeq \Delta \left( \textrm{syst} \right) $.}
+
+\section{Accuratezza} %Accuratezza
+\label{sec:accuratezza}
+\emph{Per uno strumento di sensibilità ideale, si definisce accuratezza lo scostamento tra il valore misurato dallo strumento ed il valore vero. Questo effetto non è di tipo casuale ed ha origine da una taratura imperfetta dello strumento. Viene indicato con $\delta$. L'accuratezza è determinata dagli errori sistematici della misura. Una misura è tanto più accurata quanto più sono piccoli gli errori sistematici.}
+
+\section{Funzione dell'apparato} %Funzione dell'apparato
+\label{sec:funzione-apparato}
+\emph{Si dice funzione dell'apparato o funzione strumentale, e si indica in genere con $\delta(x,y)$, la funzione che dà la probabilità $\delta(x,y)\textrm{d}x\textrm{d}y$ di misurare un valore in $[y, y+\textrm{d}y]$ quando il valore della variabile è in $[x, x+\textrm{d}x]$. Fa conoscere la probabilità che lo strumento risponda con $y$ quando il valore di ingresso è $x$. \\ La funzione osservata dipende da due variabili (apparato $Z$ e fisica $X$) e i valori misurati $Y$ sono legati a queste variabili secondo $y=h(z,x)$ e $z=h^{-1}(y,x)$ [la funzione $h$ rappresenta il legame tra $z$ e $x$ creato dall'operatore di misura ($x+z$, $xz$ $\dots$)].}

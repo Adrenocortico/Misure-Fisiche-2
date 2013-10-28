@@ -1,0 +1,51 @@
+\documentclass[a4paper,11pt,twoside]{report}
+\usepackage[italian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{microtype}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+\usepackage[binding=5mm]{layaureo}
+\usepackage[T1]{fontenc}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{caption}
+
+\renewcommand{\vec}{\bm}
+\newenvironment{citazione}
+{\begin{quotation}\small}
+{\end{quotation}}
+
+\author{Francesco~Dulio}
+\title{Appunti di \\Misure Fisiche 2}
+\date{}
+
+\begin{document} %Inizio
+
+\maketitle
+\tableofcontents
+
+\input{capitoli/concetti-fondamentali} %Concetti fondamentali
+
+\input{capitoli/media-varianza-deviazione} %Media, varianza, deviazione standard
+
+\input{capitoli/criteri-convergenza} %Criteri di convergenza
+
+\input{capitoli/principali-distribuzioni} %Principali distribuzioni
+
+\input{capitoli/funzioni} %Funzioni
+
+\input{capitoli/funzioni-variabili} %Funzioni di variabili aleatorie
+
+\input{capitoli/statistica-base} %Statistica di base
+
+\input{capitoli/statistica-multidimensionale} %Statistica multidimensionale
+
+\input{capitoli/analisi-dati} %Analisi dei dati sperimentali
+
+\input{capitoli/teoremi} %Teoremi
+
+\end{document} %Fine

@@ -1,0 +1,149 @@
+\chapter{Funzioni di variabili aleatorie} %Funzioni di variabili aleatorie
+Considerando più variabili aleatore $X,Y,\dots$, esse si possono combinare in una funzione $Z=f(X,Y,\dots)$ e questo porta ad avere una nuova variabile aleatoria $Z$. \\ Nel caso di due variabili $X,Y$ , la densità della variabile Z definita da $Z=f(X,Y)$ è $X,Y \sim p_{X,Y}(x,y) \Longrightarrow Z \sim p_{z}(x)$. $Z$ resta definita in funzione dei risultati $a$ e $b$ delle prove che realizzano $X$ e $Y$: $Z=Z(a,b)=f(X(a),Y(b))$. \\ La probabilità che $Z$ appartenga ad un certo insieme numerico $\mathbb{R}_Z$ è:
+\begin{equation}
+P\left\{ Z\in \mathbb{ R }_{ Z } \right\} =\sum _{ \left[ x,y;f\left( x,y \right) \in \mathbb{ R }_{ Z } \right]  }{ P\left( AB \right)  } =\sum _{ \left[ x,y;f\left( x,y \right) \in \mathbb{ R }_{ Z } \right]  }{ P\left\{ X\in \mathbb{ R }_{ X }; Y\in \mathbb{ R }_{ Y } \right\}  } .
+\end{equation}
+
+\section{Funzione di una variabile aleatoria} %Funzione di una variabile aleatoria
+\label{sec:funz-una-var}
+Sia $Z$ legata ad $X$, variabile aleatoria continua di densità $p_{X}{(x)}$, attraverso $Z=f(X)$. Per determinare la densità $p_{Z}(x)$ si utilizzano le relazioni \ref{eq:rel-funz-comul-densità} e \ref{eq:rel-densità-funz} e si ottiene:
+\begin{equation}
+\label{eq:densità-una-var}
+p_{ Z }\left( z \right) =\frac { 1 }{ \left| a \right|  } p_{ X }\left( \frac { z-b }{ a }  \right),
+\end{equation}
+che riscritta in termini della variabile funzionale $Z=f(X)=aX^2$ diventa:
+\begin{equation}
+p_{ Z }\left( z \right) =\frac { 1 }{ 2\sqrt { az }  } \left[ p_{ X }\left( -\sqrt { \frac { z }{ a }  }  \right) +p_{ X }\left( \sqrt { \frac { z }{ a }  }  \right)  \right];
+\end{equation}
+infine se la densità di partenza $p_{X}{(x)}$ è gaussiana:
+\begin{equation}
+p_{ Z }\left( z \right) =\frac { 1 }{ \left| a \right| \sigma \sqrt { 2\pi  }  } \textrm{exp}\left[ -\frac { \left[ z-{ \left( a\mu +b \right)  }^{ 2 } \right]  }{ 2{ a }^{ 2 }{ \sigma }^{ 2 } }  \right] 
+\end{equation}
+(nel caso che la gaussiana abbia una media nulla si ritrova la densità gamma \ref{eq:funzione-gamma} di media $\mu_z=a\sigma^2$ e varianza $\sigma_{z}^{2}=2a^2\sigma^4$). \\La media è:
+\begin{equation}
+{ \mu  }_{ z }=a\mu +b
+\end{equation}
+e la varianza:
+\begin{equation}
+{ \sigma  }_{ z }^{ 2 }=a^{ 2 }\sigma ^{ 2 }.
+\end{equation}
+La sua funzione comulativa è:
+\begin{equation}
+P\left\{ Z\le z_{ 0 } \right\} \equiv F_{ Z }\left( z \right) =\sum _{ i }{ \int _{ \Delta i }{ p_{ X }\left( x \right) \textrm{ d}x }  } .
+\end{equation}
+
+\section{Funzione di più variabili aleatorie} %Funzione di più variabili aleatorie
+\label{sec:funz-più-var}
+Funzione comulativa:
+\begin{equation}
+P\left\{ Z\le z_{ 0 } \right\} \equiv F_{ Z }\left( z \right) =\int  \dots \int _{ ({X} \in D) }{ p_{ {X} }\left( x_{ 1 },\dots x_{ n } \right) \textrm{ d}x_{ 1 },\dots ,\textrm{ d}x_{ n } } .
+\end{equation}
+Può essere riscritta, utilizzando il teorema \ref{sec:cambiamento-var-densità} come:
+\begin{equation}
+\label{eq:funz-più-var}
+p_{ Z }\left( z \right) =\int { { p }_{ X }\left( { x }_{ 1 },{ x }_{ 2 } \right) \left| \frac { \partial { f }_{ 1 }^{ -1 } }{ \partial z }  \right| \textrm{ d}{ x }_{ 2 } } =\int { { p }_{ X }\left( { f }_{ 1 }^{ -1 }\left( { z },{ x }_{ 2 } \right) ,{ x }_{ 2 } \right) \left| \frac { \partial { f }_{ 1 }^{ -1 } }{ \partial z }  \right| \textrm{ d}{ x }_{ 2 } } .
+\end{equation}
+
+Se le variabili $X_1$ e $X_2$ sono indipendenti allora la densità $p_X$ si fattorizza secondo la \ref{eq:densità-congiunta-indip} e utilizzando la \ref{eq:funz-più-var} si ottiene:
+\begin{equation}
+p_{ Z }\left( z \right) =\int { { p }_{ { X }_{ 1 } }\left( { f }_{ 1 }^{ -1 }\left( { z },{ x }_{ 2 } \right) ,{ x }_{ 2 } \right) { p }_{ { X }_{ 2 } }\left( { x }_{ 2 } \right) \frac { \partial { f }_{ 1 }^{ -1 } }{ \partial z } \textrm{ d}{ x }_{ 2 } } .
+\end{equation}
+
+Quando la variabile $Z$ è data dalla somma $Z=X_1+X_2$, la funzione inversa $f^{-1}$ e la sua derivata da inserire nella \ref{eq:funz-più-var} sono date da ${ X }_{ 1 }={ f }_{ 1 }^{ -1 }\left( Z,{ X }_{ 2 } \right) =Z-{ X }_{ 2 }$ e $\frac { \partial { f }_{ 1 }^{ -1 } }{ \partial z } =1$ e la densità è quindi:
+\begin{equation}
+p_{ Z }\left( z \right) =\int { { p }_{ { X } }\left( z-{ x }_{ 2 } \right) \textrm{ d}{ x }_{ 2 } }.
+\end{equation}
+Se le due variabili sono indipendenti la densità di probabilità di partenza si fattorizza nella \ref{eq:densità-congiunta-indip} e si ottiene l'integrale chiamato di convoluzione:
+\begin{equation}
+p_{ Z }\left( z \right) =\int _{ -\infty  }^{ +\infty  }{ { p }_{ { X }_{ 1 } }\left( z-{ x }_{ 2 } \right) { p }_{ { X }_{ 2 } }\left( { x }_{ 2 } \right) \textrm{ d}{ x }_{ 2 } } .
+\end{equation}
+
+\section{Trasformazione di media e varianza} %Trasformazione di media e varianza
+\label{sec:trasf-media-varianza}
+\begin{itemize}
+\item[-] Variabile $Z$ funzione di una sola variabile aleatoria $X$ di densità nota $p_X(x)$, cioè $Z=f(X)$:
+\begin{equation}
+\left< Z \right> =\int { f\left( x \right) { p }_{ X }\left( x \right) \textrm{ d}x } .
+\end{equation}
+In molti casi si ricorre ad una formula apporssimata, ottenuta sviluppando al secondo ordine in serie di Taylor la funzione $f(x)$ nell'intorno del varl medio $\mu$ della variabile di partenza $X$:
+\begin{equation}
+\left< Z \right> \simeq f\left( \mu  \right) +\frac { 1 }{ 2 } { f'' }\left( \mu  \right) { \sigma  }^{ 2 }.
+\end{equation}
+La media della funzione $f$ è pari alla funzione della media più un termine correttivo che dipende dalla concavità della funzione nell'intorno della media e della varianza di $X$;
+\item[-] $Z=aX+b$:
+\begin{equation}
+\left< Z \right> =f\left( \left< X \right>  \right) ;
+\end{equation}
+\begin{equation}
+\textrm{Var}\left[ Z \right] =\int { { \left[ f\left( x \right) -f\left( \left< X \right>  \right)  \right]  }^{ 2 }{ p }_{ X }\left( x \right) \textrm{ d}x } .
+\end{equation}
+Anche in questo caso la varianza può essere approssimata:
+\begin{equation}
+\textrm{Var}\left[ Z \right] \simeq { \left[ f'\left( \mu  \right)  \right]  }^{ 2 }{ \sigma  }^{ 2 }+\frac { 1 }{ 4 } { \left[ f''\left( \mu  \right)  \right]  }^{ 2 }\left( { \Delta  }_{ 4 }-{ \sigma  }^{ 4 } \right) +f'\left( \mu  \right) f''\left( \mu  \right) { \Delta  }_{ 3 }
+\end{equation}
+dove $\Delta_i$ sono i momenti definiti da \ref{eq:momento}. Conoscendo l'ordine di grandezza dei momenti, si può fare una stima accettabile della varianza di $Z$:
+\begin{itemize}
+\item[•] Densità $X$ simmetrica intorno alla media:
+\begin{equation}
+{ \Delta  }_{ 3 }=0;
+\end{equation}
+\item[•] Densità gaussiana (${ \Delta  }_{ 3 }=0$ e ${ \Delta  }_{ 4 }=3\sigma^4$):
+\begin{equation}
+\textrm{Var}\left[ Z \right] \simeq { \left[ f'\left( \mu  \right)  \right]  }^{ 2 }{ \sigma  }^{ 2 }+\frac { 1 }{ 2 } { \left[ f''\left( \mu  \right)  \right]  }^{ 2 }{ \sigma  }^{ 4 };
+\end{equation}
+\item[•] Densità simmetrica ma non gaussiana:
+\begin{equation}
+\textrm{Var}\left[ Z \right] \simeq { \left[ f'\left( \mu  \right)  \right]  }^{ 2 }{ \sigma  }^{ 2 }+\frac { 1 }{ 2 } { \left[ f''\left( \mu  \right)  \right]  }^{ 2 }{ \sigma  }^{ 4 }.
+\end{equation}
+\item[•] Quando $\sigma^2\gg\sigma^4$:
+\begin{equation}
+\textrm{Var}[Z]\simeq[f'(\mu)]^2\sigma^2.
+\end{equation}
+\end{itemize}
+\item[-] $Z=aX^2$ con $X$ che segue la densità gaussiana:
+\begin{equation}
+\left< Z \right> \simeq f\left( \mu  \right) +\frac { 1 }{ 2 } { f'' }\left( \mu  \right) { \sigma  }^{ 2 };
+\end{equation}
+\begin{equation}
+\textrm{Var}\left[ Z \right] \simeq { \left[ f'\left( \mu  \right)  \right]  }^{ 2 }{ \sigma  }^{ 2 }+\frac { 1 }{ 2 } { \left[ f''\left( \mu  \right)  \right]  }^{ 2 }{ \sigma  }^{ 4 }.
+\end{equation}
+\item[-] $Z$ funzione di $n$ variabili $X_i$: $Z=f(X_1,\dots,X_n)$.
+Si utilizza l'apporssimazione lineare:
+\begin{equation}
+\left< Z \right> =f\left( \left< X \right>  \right);
+\end{equation}
+\begin{equation}
+\textrm{Var}[Z]\simeq[f'(\mu)]^2\sigma^2.
+\end{equation}
+\begin{itemize}
+\item[•] Per due variabili:
+\begin{equation}
+\left< Z \right> =\int { f\left( { x }_{ 1 },{ x }_{ 2 } \right) { p }_{ X }\left( { x }_{ 1 },{ x }_{ 2 } \right) \textrm{ d}{ x }_{ 1 }\textrm{ d}{ x }_{ 2 } } = f(\mu_1,\mu_2);
+\end{equation}
+\begin{equation}
+\textrm{Var}\left[ Z \right] =\int { { \left[ f\left( { x }_{ 1 },{ x }_{ 2 } \right) -f\left( { \mu  }_{ 1 },\mu _{ 2 } \right)  \right]  }^{ 2 }{ p }_{ X }\left( { x }_{ 1 },{ x }_{ 2 } \right) \textrm{ d}{ x }_{ 1 }\textrm{ d}{ x }_{ 2 } } .
+\end{equation}
+Il risultato contiene delle novità:
+\begin{equation}
+\label{eq:varianza-z-composta}
+{ \sigma  }^{ 2 }_{ z }\simeq { \left[ \frac { \partial f }{ \partial { x }_{ 1 } }  \right]  }^{ 2 }{ \sigma  }_{ 1 }^{ 2 }+{ \left[ \frac { \partial f }{ \partial { x }_{ 2 } }  \right]  }^{ 2 }{ \sigma  }_{ 2 }^{ 2 }+2{ \left[ \frac { \partial f }{ \partial { x }_{ 1 } } \frac { \partial f }{ \partial { x }_{ 2 } }  \right]  }{ \sigma  }_{ 1,2 }.
+\end{equation}
+\begin{itemize}
+\item Variabili indipendenti $\sigma_{1,2}=0$:
+\begin{equation}
+{ \sigma  }^{ 2 }_{ z }={ \left[ \frac { \partial f }{ \partial { x }_{ 1 } }  \right]  }^{ 2 }{ \sigma  }_{ 1 }^{ 2 }+{ \left[ \frac { \partial f }{ \partial { x }_{ 2 } }  \right]  }^{ 2 }{ \sigma  }_{ 2 }^{ 2 };
+\end{equation}
+\item $Z=X_1+X_2$:
+\begin{equation}
+\mu_z=\mu_1+\mu_2;
+\end{equation}
+\begin{equation}
+\sigma^2_z=\sigma^2_1+\sigma^2_2;
+\end{equation}
+\item $Z=X_1X_2$, $Z=\frac{X_1}{X_2}$, $Z=\frac{X_2}{X_1}$:
+\begin{equation}
+\frac { Var\left[ Z \right]  }{ { \left< Z \right>  }^{ 2 } } =\frac { Var\left[ { X }_{ 1 } \right]  }{ { \left< { X }_{ 1 } \right>  }^{ 2 } } +\frac { Var\left[ { X }_{ 2 } \right]  }{ { \left< { X }_{ 2 } \right>  }^{ 2 } } .
+\end{equation}
+\end{itemize}
+\end{itemize}
+\end{itemize}

@@ -1,0 +1,142 @@
+\select@language {italian}
+\contentsline {chapter}{\numberline {1}Concetti fondamentali}{6}{chapter.1}
+\contentsline {section}{\numberline {1.1}Variabile aleatoria}{6}{section.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Variabili aleatorie indipendenti}{6}{subsection.1.1.1}
+\contentsline {section}{\numberline {1.2}Spazio campionario o dei casi}{6}{section.1.2}
+\contentsline {section}{\numberline {1.3}Evento}{6}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Eventi indipendenti}{6}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Eventi incompatibili}{7}{subsection.1.3.2}
+\contentsline {section}{\numberline {1.4}Spettro}{7}{section.1.4}
+\contentsline {section}{\numberline {1.5}Prova}{7}{section.1.5}
+\contentsline {section}{\numberline {1.6}Misura, esperimento o campionamento}{7}{section.1.6}
+\contentsline {section}{\numberline {1.7}Campione}{7}{section.1.7}
+\contentsline {section}{\numberline {1.8}Popolazione}{7}{section.1.8}
+\contentsline {section}{\numberline {1.9}$\sigma $-algebra}{7}{section.1.9}
+\contentsline {section}{\numberline {1.10}Spazio di probabilit\IeC {\`a}}{7}{section.1.10}
+\contentsline {section}{\numberline {1.11}Quantile}{8}{section.1.11}
+\contentsline {section}{\numberline {1.12}Valore atteso}{8}{section.1.12}
+\contentsline {section}{\numberline {1.13}Campione casuale}{8}{section.1.13}
+\contentsline {section}{\numberline {1.14}Statistica}{8}{section.1.14}
+\contentsline {section}{\numberline {1.15}Probabilit\IeC {\`a}}{8}{section.1.15}
+\contentsline {subsection}{\numberline {1.15.1}Probabilit\IeC {\`a} soggettiva}{8}{subsection.1.15.1}
+\contentsline {subsection}{\numberline {1.15.2}Probabilit\IeC {\`a} a priori}{8}{subsection.1.15.2}
+\contentsline {subsection}{\numberline {1.15.3}Probabilit\IeC {\`a} frequentista}{9}{subsection.1.15.3}
+\contentsline {subsection}{\numberline {1.15.4}Probabilit\IeC {\`a} di Kolmogorov o assiomatica}{9}{subsection.1.15.4}
+\contentsline {subsection}{\numberline {1.15.5}Probabilit\IeC {\`a} composta}{9}{subsection.1.15.5}
+\contentsline {subsection}{\numberline {1.15.6}Probabilit\IeC {\`a} condizionata}{9}{subsection.1.15.6}
+\contentsline {subsection}{\numberline {1.15.7}Legge ipergeometrica}{9}{subsection.1.15.7}
+\contentsline {section}{\numberline {1.16}Calcolo combinatorio}{9}{section.1.16}
+\contentsline {subsection}{\numberline {1.16.1}Permutazioni}{9}{subsection.1.16.1}
+\contentsline {subsection}{\numberline {1.16.2}Permutazioni con ripetizione}{10}{subsection.1.16.2}
+\contentsline {subsection}{\numberline {1.16.3}Disposizioni}{10}{subsection.1.16.3}
+\contentsline {subsection}{\numberline {1.16.4}Disposizioni con ripetizione}{10}{subsection.1.16.4}
+\contentsline {subsection}{\numberline {1.16.5}Combinazioni}{10}{subsection.1.16.5}
+\contentsline {subsection}{\numberline {1.16.6}Combinazioni con ripetizioni}{10}{subsection.1.16.6}
+\contentsline {section}{\numberline {1.17}Variabile standard}{10}{section.1.17}
+\contentsline {section}{\numberline {1.18}Ellisse di concentrazione}{10}{section.1.18}
+\contentsline {section}{\numberline {1.19}Momento}{11}{section.1.19}
+\contentsline {section}{\numberline {1.20}Intervallo di confidenza}{11}{section.1.20}
+\contentsline {section}{\numberline {1.21}Livello di confidenza}{11}{section.1.21}
+\contentsline {section}{\numberline {1.22}Quantit\IeC {\`a} pivotali}{12}{section.1.22}
+\contentsline {section}{\numberline {1.23}Stimatore distorto}{12}{section.1.23}
+\contentsline {section}{\numberline {1.24}Gradi di libert\IeC {\`a} di una statistica}{12}{section.1.24}
+\contentsline {section}{\numberline {1.25}Scienza esatta}{12}{section.1.25}
+\contentsline {section}{\numberline {1.26}Grandezze fisiche costanti e variabili}{12}{section.1.26}
+\contentsline {section}{\numberline {1.27}Sensibilit\IeC {\`a} o risoluzione di uno strumento}{13}{section.1.27}
+\contentsline {section}{\numberline {1.28}Errore statistico}{13}{section.1.28}
+\contentsline {section}{\numberline {1.29}Precisione}{13}{section.1.29}
+\contentsline {section}{\numberline {1.30}Errore sistematico}{13}{section.1.30}
+\contentsline {section}{\numberline {1.31}Accuratezza}{13}{section.1.31}
+\contentsline {section}{\numberline {1.32}Funzione dell'apparato}{14}{section.1.32}
+\contentsline {chapter}{\numberline {2}Media, varianza, deviazione standard}{15}{chapter.2}
+\contentsline {section}{\numberline {2.1}Media $\mu $}{15}{section.2.1}
+\contentsline {section}{\numberline {2.2}Varianza $\sigma ^2$}{15}{section.2.2}
+\contentsline {section}{\numberline {2.3}Deviazione standard $\sigma $}{16}{section.2.3}
+\contentsline {chapter}{\numberline {3}Criteri di convergenza}{17}{chapter.3}
+\contentsline {section}{\numberline {3.1}Limite in probabilit\IeC {\`a}}{17}{section.3.1}
+\contentsline {section}{\numberline {3.2}Limite quasi certo}{17}{section.3.2}
+\contentsline {section}{\numberline {3.3}Convergenza in legge o distribuzione}{18}{section.3.3}
+\contentsline {chapter}{\numberline {4}Principali distribuzioni}{19}{chapter.4}
+\contentsline {section}{\numberline {4.1}Densit\IeC {\`a} di probabilit\IeC {\`a} per variabili discrete}{19}{section.4.1}
+\contentsline {section}{\numberline {4.2}Densit\IeC {\`a} di probabilit\IeC {\`a} per variabili continue}{19}{section.4.2}
+\contentsline {section}{\numberline {4.3}Distribuzione binomiale}{19}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Distribuzione geometrica}{20}{subsection.4.3.1}
+\contentsline {section}{\numberline {4.4}Distribuzione di Poisson}{20}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Processi poissoniani}{21}{subsection.4.4.1}
+\contentsline {section}{\numberline {4.5}Legge esponenziale negativa dei tempi di arrivo}{21}{section.4.5}
+\contentsline {subsection}{\numberline {4.5.1}Densit\IeC {\`a} di Weibull}{22}{subsection.4.5.1}
+\contentsline {subsection}{\numberline {4.5.2}Densit\IeC {\`a} erlanghiana di ordine k o gamma}{22}{subsection.4.5.2}
+\contentsline {section}{\numberline {4.6}Distribuzione gaussiana o normale}{22}{section.4.6}
+\contentsline {subsection}{\numberline {4.6.1}Densit\IeC {\`a} gaussiana bidimensionale}{23}{subsection.4.6.1}
+\contentsline {section}{\numberline {4.7}Densit\IeC {\`a} $\chi ^2$}{24}{section.4.7}
+\contentsline {subsection}{\numberline {4.7.1}Distribuzione di Maxwell}{25}{subsection.4.7.1}
+\contentsline {subsection}{\numberline {4.7.2}Distribuzione Snedecor}{25}{subsection.4.7.2}
+\contentsline {section}{\numberline {4.8}Densit\IeC {\`a} $t$ di Student}{25}{section.4.8}
+\contentsline {section}{\numberline {4.9}Densit\IeC {\`a} uniforme}{26}{section.4.9}
+\contentsline {subsection}{\numberline {4.9.1}Distribuzione triangolare}{26}{subsection.4.9.1}
+\contentsline {section}{\numberline {4.10}Distribuzione di Boltzmann}{26}{section.4.10}
+\contentsline {section}{\numberline {4.11}Riassunto}{27}{section.4.11}
+\contentsline {chapter}{\numberline {5}Funzioni}{28}{chapter.5}
+\contentsline {section}{\numberline {5.1}Passaggio dallo spettro discreto a quello continuo}{28}{section.5.1}
+\contentsline {section}{\numberline {5.2}Funzione comulativa o di ripartizione}{28}{section.5.2}
+\contentsline {section}{\numberline {5.3}Funzione degli errori}{28}{section.5.3}
+\contentsline {chapter}{\numberline {6}Funzioni di variabili aleatorie}{29}{chapter.6}
+\contentsline {section}{\numberline {6.1}Funzione di una variabile aleatoria}{29}{section.6.1}
+\contentsline {section}{\numberline {6.2}Funzione di pi\IeC {\`u} variabili aleatorie}{30}{section.6.2}
+\contentsline {section}{\numberline {6.3}Trasformazione di media e varianza}{30}{section.6.3}
+\contentsline {chapter}{\numberline {7}Stastistica di base}{33}{chapter.7}
+\contentsline {section}{\numberline {7.1}Determinazione degli intervalli di confidenza}{33}{section.7.1}
+\contentsline {section}{\numberline {7.2}Approccio bayesiano}{34}{section.7.2}
+\contentsline {section}{\numberline {7.3}Stima della probabilit\IeC {\`a} da grandi campioni}{34}{section.7.3}
+\contentsline {subsection}{\numberline {7.3.1}Per grandi campioni:}{35}{subsection.7.3.1}
+\contentsline {subsection}{\numberline {7.3.2}Per piccoli campioni:}{35}{subsection.7.3.2}
+\contentsline {section}{\numberline {7.4}Stima della probabilit\IeC {\`a} da piccoli campioni}{35}{section.7.4}
+\contentsline {section}{\numberline {7.5}Intervalli di stima per eventi poissoniani}{36}{section.7.5}
+\contentsline {section}{\numberline {7.6}Stima della media da grandi campioni}{37}{section.7.6}
+\contentsline {section}{\numberline {7.7}Stima della varianza da grandi campioni}{37}{section.7.7}
+\contentsline {subsection}{\numberline {7.7.1}Varianza della varianza}{38}{subsection.7.7.1}
+\contentsline {section}{\numberline {7.8}Stima della media da piccoli campioni}{39}{section.7.8}
+\contentsline {section}{\numberline {7.9}Stima della varianza da piccoli campioni}{39}{section.7.9}
+\contentsline {section}{\numberline {7.10}Riassunto}{40}{section.7.10}
+\contentsline {section}{\numberline {7.11}Verifica di una ipotesi}{40}{section.7.11}
+\contentsline {subsection}{\numberline {7.11.1}Confronto tra livello del test e SL}{41}{subsection.7.11.1}
+\contentsline {section}{\numberline {7.12}Verifica di compatibilit\IeC {\`a} tra due valori}{41}{section.7.12}
+\contentsline {section}{\numberline {7.13}Stima della densit\IeC {\`a} di una popolazione}{42}{section.7.13}
+\contentsline {section}{\numberline {7.14}Verifica di compatibilit\IeC {\`a} tra campione e popolazione}{44}{section.7.14}
+\contentsline {chapter}{\numberline {8}Statistica multidimensionale}{45}{chapter.8}
+\contentsline {section}{\numberline {8.1}Densit\IeC {\`a} congiunta}{45}{section.8.1}
+\contentsline {section}{\numberline {8.2}Densit\IeC {\`a} marginale}{46}{section.8.2}
+\contentsline {section}{\numberline {8.3}Indipendenza di variabili}{46}{section.8.3}
+\contentsline {section}{\numberline {8.4}Densit\IeC {\`a} condizionata}{46}{section.8.4}
+\contentsline {section}{\numberline {8.5}Covarianza di due variabili}{46}{section.8.5}
+\contentsline {section}{\numberline {8.6}Correlazione tra variabili}{47}{section.8.6}
+\contentsline {section}{\numberline {8.7}Densit\IeC {\`a} normali condizionate}{47}{section.8.7}
+\contentsline {chapter}{\numberline {9}Analisi dei dati sperimentali}{48}{chapter.9}
+\contentsline {section}{\numberline {9.1}Misure indirette e propagazione degli errori}{48}{section.9.1}
+\contentsline {subsection}{\numberline {9.1.1}Metodo bootstrap}{50}{subsection.9.1.1}
+\contentsline {section}{\numberline {9.2}Riassunto}{50}{section.9.2}
+\contentsline {section}{\numberline {9.3}Definizione dei tipi di misura}{51}{section.9.3}
+\contentsline {subsection}{\numberline {9.3.1}$M\left ( 0,0,\Delta \right ) $}{51}{subsection.9.3.1}
+\contentsline {subsection}{\numberline {9.3.2}$M\left ( 0,\sigma ,0 \right ) $}{51}{subsection.9.3.2}
+\contentsline {subsection}{\numberline {9.3.3}$M\left ( 0,\sigma ,\Delta \right ) $}{52}{subsection.9.3.3}
+\contentsline {subsection}{\numberline {9.3.4}$M\left ( f,0,0 \right ) $}{52}{subsection.9.3.4}
+\contentsline {subsection}{\numberline {9.3.5}$M\left ( f,\sigma ,0 \right ) $}{52}{subsection.9.3.5}
+\contentsline {subsection}{\numberline {9.3.6}$M\left ( f,0,\Delta \right ) $}{53}{subsection.9.3.6}
+\contentsline {subsection}{\numberline {9.3.7}$M\left ( f,\sigma ,\Delta \right ) $}{54}{subsection.9.3.7}
+\contentsline {chapter}{\numberline {10}Teoremi}{56}{chapter.10}
+\contentsline {section}{\numberline {10.1}Teorema di additivit\IeC {\`a}}{56}{section.10.1}
+\contentsline {section}{\numberline {10.2}Teorema del prodotto}{56}{section.10.2}
+\contentsline {section}{\numberline {10.3}Teorema di Bayes}{56}{section.10.3}
+\contentsline {paragraph}{Formula delle probabilit\IeC {\`a} totali}{56}{equation.10.3.4}
+\contentsline {section}{\numberline {10.4}Legge 3-$\sigma $}{56}{section.10.4}
+\contentsline {subsection}{\numberline {10.4.1}Disuguaglianza di Tchebychev}{57}{subsection.10.4.1}
+\contentsline {section}{\numberline {10.5}Teorema Limite Centrale}{57}{section.10.5}
+\contentsline {section}{\numberline {10.6}Teorema dell'indipendenza stocastica}{57}{section.10.6}
+\contentsline {section}{\numberline {10.7}Teorema di Pearson}{57}{section.10.7}
+\contentsline {section}{\numberline {10.8}Additivit\IeC {\`a} della variabile $\chi ^2$}{57}{section.10.8}
+\contentsline {section}{\numberline {10.9}Teorema delle variabili aleatore comulative}{58}{section.10.9}
+\contentsline {section}{\numberline {10.10}Teorema di Cauchy-Schwarz}{58}{section.10.10}
+\contentsline {section}{\numberline {10.11}Teorema di indipendenza di variabili gaussiane}{58}{section.10.11}
+\contentsline {section}{\numberline {10.12}Teorema del cambiamento di variabile in funzioni densit\IeC {\`a}}{58}{section.10.12}
+\contentsline {section}{\numberline {10.13}Indipendenza di $M$ e $S^2$}{58}{section.10.13}
+\contentsline {section}{\numberline {10.14}Varianza campionaria}{59}{section.10.14}
